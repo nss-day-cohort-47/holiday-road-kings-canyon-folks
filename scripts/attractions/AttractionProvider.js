@@ -13,7 +13,7 @@ export const getBizarre = () => {
         bizarreCollection = parsedResponse
         //* finally we want to return that array
         return parsedResponse;
-
+        
     });
 };
 
