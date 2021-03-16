@@ -2,8 +2,9 @@
 export const park = (nps) => {
     return `
     <option value="${nps.id}">${nps.fullName}</option>`
+    
 //creating HTML versions of the park data
-/*
+
     `<h2>${nps.fullName}</h2>
     <div>${nps.images}</div>
     <p>Location: ${nps.states}</p>
@@ -11,5 +12,4 @@ export const park = (nps) => {
     <p>Hours: ${nps.operatingHours}</p>
     <p>${nps.description}</p>
     `;
-    */
 }
