@@ -1,13 +1,15 @@
-import { eatery } from './eateryDetail.js';
-import { getEateries } from './EateryProvider';
+import { eateryDetail } from './eateryDetail.js';
+import { getEateries, loadEateries } from './eateries/EateryProvider.js';
 
-export const displayEateries = () => {
-    const eateryCollection = getEateries()
-    const target = document.querySelector(".eaterySection")
-    let eateryHTML = ""
-        for (const eateryObject of eateryCollection) {
-            eateryHTML += eatery(eateryObject)
-        }
-        return eateryHTML;
 
+export const makeEateryList = (eateryArray) => {
+  render(eateryArray)
 };
+
+const render = (eateryData) => {
+  	const eateryDisplay = document.querySelector("#eateryDropdown");
+  	let HTMLArray = eateryData.map(eatery => {
+    	return eateryDetail(eatery);
+  	})
+      eateryDisplay.innerHTML = HTMLArray.join("");
+}

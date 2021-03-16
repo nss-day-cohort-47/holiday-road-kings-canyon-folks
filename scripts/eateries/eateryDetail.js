@@ -1,5 +1,6 @@
-export const eatery = (postObject) => {
-  return `
+export const eateryDetail = (postObject) => {
+
+return `
     <section class="eateryTile">
       <h2>${postObject.businessName} </h2>
       <p> Location: ${postObject.city}, ${postObject.state} </p>
@@ -9,5 +10,5 @@ export const eatery = (postObject) => {
       <p> Restrooms: ${postObject.amenities/restrooms} </p>
       <div><button>Add to Itinerary</button></div>
     </section>
-  `
+  `;
 }

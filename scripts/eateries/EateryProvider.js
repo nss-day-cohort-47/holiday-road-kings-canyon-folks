@@ -1,6 +1,10 @@
 let eateryCollection = []
 
 export const getEateries = () => {
+    return[...eateryCollection]
+}
+
+export const loadEateries = () => {
     return fetch ("http://holidayroad.nss.team/eateries")
     .then(response => response.json())
     .then(parsedResponse => {
@@ -8,3 +12,5 @@ export const getEateries = () => {
         return parsedResponse;
     });
 };
+
+console.log(loadEateries())
