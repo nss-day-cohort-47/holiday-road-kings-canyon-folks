@@ -1,3 +1,5 @@
+
+import { displayAttractions } from './attractions/AttractionList.js'
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 
 
@@ -13,6 +15,7 @@ let longitude = -86.7844;
 //   ***  Function to start app processes  ***   //
 
 const startWheelsOnTheGround = () => {
+    displayAttractions();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
     getWeatherForecast(latitude, longitude);
@@ -22,3 +25,4 @@ const startWheelsOnTheGround = () => {
 
 
 startWheelsOnTheGround();
+
