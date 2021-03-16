@@ -4,64 +4,22 @@
 import {park} from "./Parks.js"
 import {useParks, getParks} from "./ParkProvider.js"
 
-//exporting a function called makeParkList, this function will 
+let parkArr = [];
+
 export const makeParkList =() => {
-    let parkArray = [];
-    getParks().then(()=> { 
-        parkArray = useParks()
-        console.log(parkArray)
-    })
-    render(parkArray)
-}
-
-const render = (parkData) => {
-        const parkObj = document.querySelector(".parkDropdown");
-    //returning array
-        let parkHTML = parkData.map(onePark => {
-            return park(onePark);
-        })
-        //use join to make array a string
-        parkObj.innerHTML += parkHTML.join("");
-    }
-
-
-
-
-
-/*
-export const makeParkList = () => {
-    let parkArray = []
     getParks().then(() => {
-        parkCollection = useParks()
-        console.log(makeParkList(), "park test")
+        parkArr = useParks()
+        console.log(parkArr)
+        // render(parkArr)
     })
-    .then(() => {
-        const target = document.querySelector(".parkDropdown")
-        let parkHTML = ""
-        for (const parkObj of parkCollection) {
-            parkHTML += park(parkObj)
+   .then (() => {
+    const parkObj = document.querySelector(".parkDropdown");
+    //returning array
+        let parkDropHTML = "" 
+        for (const parkObject of parkArr) {
+            parkDropHTML += park(parkObject);
         }
-        return target.innerHTML += parkHTML
+      return parkObj.innerHTML += parkDropHTML;
     })
-};
 
-
-
-// const render = (parkData) => {
-//     const parkObj = document.querySelector(".parkSection");
-// //returning array
-//     let parkHTML = parkData.map(onePark => {
-//         return park(onePark);
-//     })
-//     //use join to make array a string
-//     parkObj.innerHTML += parkHTML.join("");
-// }
-
-
-
-// let parkArray = [];
-//     getParks().then(()=> { 
-//     parkArray = useParks()
-//     console.log(parkArray)
-//     })
-//     render(parkArray) */
+}
