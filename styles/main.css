@@ -50,6 +50,14 @@ footer{
     margin: 3px;
 }
 
+.parkDropdown{
+    background-color: #4D774E;
+    color: white;
+    width: 200px;
+    height: 30px;
+    margin: 3px;
+}
+
 .itineraryHeader{
     text-align: center;
 }
