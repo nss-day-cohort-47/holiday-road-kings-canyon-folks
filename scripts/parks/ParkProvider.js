@@ -4,10 +4,7 @@ import { settings } from "../Settings.js"
 //declaring park array
 let parkCollection = [];
 
-//creating copy of park array data
-export const useParks = () => {
-    return [...parkCollection]
-}
+
 
 //fetching park data from api 
 export const getParks = () => {
@@ -15,9 +12,16 @@ export const getParks = () => {
     .then(response => response.json())
     .then((parsedResponse) => {
        parkCollection = parsedResponse
-
-       console.log("parkarray", parkCollection)
         return parsedResponse;
     });
 };
 
+//creating copy of park array data
+export const useParks = () => {
+    getParks().then(()=> { 
+        let parkArray = parkCollection.data
+        console.log(parkCollection.data)
+        return [...parkArray]
+     });
+    
+}

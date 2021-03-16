@@ -2,11 +2,11 @@
 
 export const park = (nps) => {
     return `
-    <h2>${park.fullName}</h2>
-    <div>${park.images}</div>
-    <p>Location: ${park.states}</p>
-    <p>Website: ${park.url}</p>
-    <p>Hours: ${park.operatingHours}</p>
-    <p>${park.description}</p>
+    <h2>${nps.fullName}</h2>
+    <div>${nps.images}</div>
+    <p>Location: ${nps.states}</p>
+    <p>Website: ${nps.url}</p>
+    <p>Hours: ${nps.operatingHours}</p>
+    <p>${nps.description}</p>
     `;
 }
