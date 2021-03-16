@@ -1,9 +1,28 @@
-import { displayAttractions } from './attractions/AttractionList.js'
-import { displayEateries } from './eateries/eateryList.js'
+
+import { displayAttractions } from './attractions/AttractionList.js';
+import { getWeatherForecast } from "./weather/WeatherProvider.js";
+import { displayEateries } from "./eateries/eateryList.js";
 
 
-displayAttractions();
+//!!!!   define latitude and longitude to get forecast to render
+let latitude = 36.1659;
+let longitude = -86.7844;
 
 
-displayEateries();
+
+
+//   ***  Function to start app processes  ***   //
+
+const startWheelsOnTheGround = () => {
+	displayAttractions();
+	displayEateries();
+    //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
+    //!!!!        Note  arguments will be derived from selected park's coordinates 
+    getWeatherForecast(latitude, longitude);
+
+}
+
+
+
+startWheelsOnTheGround();
 
