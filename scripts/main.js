@@ -1,5 +1,5 @@
 
-import { displayAttractions } from './attractions/AttractionList.js';
+import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
 
@@ -26,13 +26,13 @@ const startWheelsOnTheGround = () => {
 
 startWheelsOnTheGround();
 
-<<<<<<< HEAD
-displayAttractions();
 
 const mainEvent = document.querySelector(".main");
 
 mainEvent.addEventListener("change", (event) => {
-    if (event.target.id === "bizarreDropdown")
+    if (event.target.id === "bizarreDropdown") {
+        displayAttractionCards();
+    }
 })
 
 
@@ -45,5 +45,3 @@ mainEvent.addEventListener("change", (event) => {
 //       showFilteredPosts(yearAsNumber);
 //     }
 //   })
-=======
->>>>>>> main
