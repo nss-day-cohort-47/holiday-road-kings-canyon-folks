@@ -1,4 +1,4 @@
-import { getWeatherForecast } from "./WeatherProvider.js";
+import { getWeatherForecast } from "./weather/WeatherProvider.js";
 
 
 
