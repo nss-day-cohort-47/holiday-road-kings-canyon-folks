@@ -1,7 +1,6 @@
 import { eateryDetail } from './eateryDetail.js';
 import { getEateries, useEateries } from './EateryProvider.js';
 
-
 export const displayEateries = () => {
 
 	let eateryCollection = [];
@@ -21,19 +20,3 @@ export const displayEateries = () => {
 			return target.innerHTML += eateryHTML;
 		})
 };
-
-
-
-
-// export const makeEateryList = (eateryArray) => {
-// 	render(eateryArray)
-//   };
-
-//   const render = (eateryData) => {
-// 		const eateryDisplay = document.querySelector("#eateryDropdown");
-// 		let HTMLArray = eateryData.map(eatery => {
-// 		  return eateryDetail(eatery);
-// 		})
-// 		eateryDisplay.innerHTML = HTMLArray.join("");
-//   }
-

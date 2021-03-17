@@ -143,3 +143,84 @@ body {
     justify-content: center;
     height: 70px;
 }
+
+.eaterySection{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.eateryHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.eateryCard{
+    border: solid #164A41 5px;
+    display: flex;
+}
+
+.eateryHeadline{
+    color: #164A41
+}
+
+.eateryTitle{
+    color: #164A41
+}
+
+.addButton{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+
+.bizarreSection{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.bizarreHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bizarreCard{
+    border: solid #164A41 5px;
+}
+
+.bizarreHeadline{
+    color: #164A41
+}
+
+.bizarreTitle{
+    color: #164A41
+}
+
+.parkSection{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.parkHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+.parkCard{
+    border: solid #164A41 5px;
+}
+
+.parkHeadline{
+    color: #164A41
+}
+
+.parkTitle{
+    color: #164A41
+}
+
