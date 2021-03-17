@@ -53,16 +53,6 @@ mainEvent.addEventListener("change", (event) => {
     }
 })
 
-// singleEatery (event.target.value);
-// const singleEatery = (id){
-//     let foundEatery = useEateries().find(eatery => eatery.id === id);
-//     //use foundBizarre to be the object that is passed into Attraction card HTML representation
-//     //could be a refactored function based off of display attractions 
-//     //
-//     //const target = document.querySelector(the target id or class);
-//     let eateryHTML = SingleEateryCard(foundEatery)
-//     target.innerHTML += eateryHTML
-// };
 
 const eateryElement = document.querySelector(".main");
 
@@ -72,29 +62,3 @@ eateryElement.addEventListener("change", (event) => {
         displayEateryCards(event.target.value);
 	}
 })
-
-
-// const filterEatery = (whatFilter) => {
-// 	const filterArray = useEateries().filter(singleEatery => {
-// 		if (singleEatery.businessName.includes(whatFilter)) {
-// 			return singleEatery;
-// 		}
-// 	})
-// 	makeEateryList(filterArray);
-// }
-
-// const showdropDownNav = () => {
-// 	const dropDownElement = document.querySelector('.eateryDropdown');
-// 	dropDownElement.innerHTML = dropDownNav();
-// }
-
-
-// const startEIA = () => {
-// 	showdropDownNav();
-// 	loadEateries()
-// 		.then(eateryArray => {
-// 			makeEateryList(eateryArray)
-// 		})
-// }
-
-// startEIA();

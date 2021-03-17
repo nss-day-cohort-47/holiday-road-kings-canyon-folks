@@ -25,7 +25,7 @@ export const displayEateryCards = (id) => {
 
     let eateryCollection = []
 
-    getEateries().then((response) => {
+    getEateries().then(() => {
         eateryCollection = useEateries()
         console.log(eateryCollection, "food test")
         

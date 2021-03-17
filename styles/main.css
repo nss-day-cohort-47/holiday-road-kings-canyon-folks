@@ -161,11 +161,12 @@ body {
 }
 
 .eateryHeadline{
-    color: #164A41
+    color: #164A41;
+    font-weight: bold;
 }
 
 .eateryTitle{
-    color: #164A41
+    color: #164A41;
 }
 
 .addButton{
@@ -194,8 +195,9 @@ body {
     padding: 5px;
 }
 
-.bizarreHeadline{
-    color: #164A41
+.attractionHeadline{
+    color: #164A41;
+    font-weight: bold;
 }
 
 .bizarreTitle{

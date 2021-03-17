@@ -13,7 +13,7 @@ export const Attraction = (bizarre) => {
 
 export const AttractionCard = (bizarre) => {
     return `
-    <h2>${bizarre.name}</h2>
+    <h2 class="attractionHeadline">${bizarre.name}</h2>
     <p>Location: ${bizarre.city}, ${bizarre.state}</p>
     <p>${bizarre.description}</p>
     <p>Souvenirs: ${bizarre.ameneties.souvenirs === true ? "Available" : "Unavailable"
