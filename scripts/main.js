@@ -2,7 +2,7 @@
 import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
-import { makeParkCard } from "./parks/ParkList.js"
+import { makeParkCard, makeParkList } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
@@ -20,7 +20,7 @@ let longitude = -86.7844;
 const startWheelsOnTheGround = () => {
     //populating makeParkCard with API data with getParks function here. 
     getParks().then((parkResp) => {
-        makeParkCard(parkResp);
+        makeParkList(parkResp);
     });
 
 	displayAttractions();
@@ -56,5 +56,14 @@ mainEvent.addEventListener("change", (event) => {
         // console.log(selection, "selection")
         // console.log(singleCard, "singleCard")
     }
+    
+})
+
+const parkEvent = document.querySelector(".parkDropdown");
+let currentlySelectedPark = "";
+parkEvent.addEventListener("change", (event) => {
+    currentlySelectedPark = event.target.value
+    console.log(currentlySelectedPark, "selected park")
+    makeParkCard(event.target.value)
 })
 
