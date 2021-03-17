@@ -61,5 +61,4 @@ eateryElement.addEventListener("change", (event) => {
 	if (event.target.id === "eateryDropdown") {
         displayEateryCards(event.target.value);
     }
-    if (event.target.id === "eateryDropdown")
 })
