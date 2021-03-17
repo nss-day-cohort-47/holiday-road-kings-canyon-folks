@@ -10,8 +10,9 @@ import { showWeather } from "./weather/WeatherList.js";
 let latitude = 36.1659;
 let longitude = -86.7844;
 
-
-
+const saveButton = () => {
+    document.querySelector("#saveButton").disabled=true
+}
 
 //   ***  Function to start app processes  ***   //
 
@@ -19,6 +20,7 @@ const startWheelsOnTheGround = () => {
 	displayAttractions();
 	displayEateries();
     makeParkList();
+    saveButton();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
     //!!!!              will have to be called after park data with then method
