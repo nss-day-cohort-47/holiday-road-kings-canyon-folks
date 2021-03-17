@@ -1,7 +1,7 @@
 import { displayAttractions } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
-import { makeParkList } from "./parks/ParkList.js"
+import { makeParkList, makeParkCard } from "./parks/ParkList.js"
 import { showWeather } from "./weather/WeatherList.js";
 
 
@@ -19,6 +19,7 @@ const startWheelsOnTheGround = () => {
 	displayAttractions();
 	displayEateries();
     makeParkList();
+    makeParkCard();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
     //!!!!              will have to be called after park data with then method
