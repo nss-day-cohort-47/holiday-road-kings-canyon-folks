@@ -52,7 +52,7 @@ bizarreEvent.addEventListener("change", (event) => {
 
 const bizarreEventButton = document.querySelector(".addBizarreButton")
 
-bizarreEventButton.addEventListener("onclick", (event) => {
+bizarreEventButton.addEventListener("click", (event) => {
     addAttractionItinerary(event.target.value)
 })
 
