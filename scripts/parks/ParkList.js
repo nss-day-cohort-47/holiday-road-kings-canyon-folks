@@ -4,17 +4,18 @@
 import { park, parkCard } from "./Parks.js";
 import { useParks } from "./ParkProvider.js";
 
+
+//function to render HTML from Parks.js (parkCard) to the DOM, this function also filters the parks by their corresponding parkCode from the API data. 
 export const makeParkCard = (parkData) => {
     let filterParks = useParks().find( nps => nps.parkCode === parkData)
     const parkCardObj = document.querySelector(".parkDetail");
     let parkCardHTML = "";
    
     parkCardHTML = parkCard(filterParks);
-    // makeParkList(parkData);
     return (parkCardObj.innerHTML = parkCardHTML);
   };
 
-// makeParkList creates the dropdown and renders it in HTML to the DOM. this function isn't being exported separately because we call it inside of makeParkCard which is being exported.
+// makeParkList creates the dropdown and renders it in HTML to the DOM.
 export const makeParkList = (parkData) => {
   const parkObj = document.querySelector(".parkDropdown");
   let parkDropHTML = "";

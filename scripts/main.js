@@ -20,7 +20,7 @@ const saveButton = () => {
 //   ***  Function to start app processes  ***   //
 
 const startWheelsOnTheGround = () => {
-    //populating makeParkCard with API data with getParks function here. 
+    //populating makeParkList with API data from getParks function here. 
     getParks().then((parkResp) => {
         makeParkList(parkResp);
     });
@@ -43,6 +43,13 @@ const startWheelsOnTheGround = () => {
 
 startWheelsOnTheGround();
 
+//event listener to select a park from the drop down and display a single corresponding park card
+const parkEvent = document.querySelector(".parkDropdown");
+let currentlySelectedPark = "";
+parkEvent.addEventListener("change", (event) => {
+    currentlySelectedPark = event.target.value
+    makeParkCard(event.target.value)
+})
 
 const mainEvent = document.querySelector(".main");
 
@@ -60,13 +67,6 @@ mainEvent.addEventListener("change", (event) => {
     
 })
 
-const parkEvent = document.querySelector(".parkDropdown");
-let currentlySelectedPark = "";
-parkEvent.addEventListener("change", (event) => {
-    currentlySelectedPark = event.target.value
-    console.log(currentlySelectedPark, "selected park")
-    makeParkCard(event.target.value)
-})
 
 // singleEatery (event.target.value);
 // const singleEatery = (id){
