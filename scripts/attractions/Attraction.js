@@ -9,10 +9,16 @@ export const Attraction = (bizarre) => {
 }
 
 
-//! This will be used later to build out the bizarre attraction card.
+//! This will be used to build out the bizarre attraction card.
 
-// <h2>${bizarre.name}</h2>
-//     <p>Location: ${bizarre.city} + " " + ${bizarre.state}</p>
-//     <p>${bizarre.description}</p>
-//     <p>Souvenirs? ${bizarre.souvenirs}</p>
-//     <p>Restrooms? ${bizarre.restrooms}</p>
+export const AttractionCard = (bizarre) => {
+    return `
+    <h2>${bizarre.name}</h2>
+    <p>Location: ${bizarre.city}, ${bizarre.state}</p>
+    <p>${bizarre.description}</p>
+    <p>Souvenirs: ${bizarre.ameneties.souvenirs === true ? "Available" : "Unavailable"
+}</p>
+    <p>Restrooms: ${bizarre.ameneties.restrooms === true ? "Available" : "Unavailable"
+}</p>
+    `
+}
