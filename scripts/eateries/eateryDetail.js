@@ -11,9 +11,8 @@ export const eateryCard = (eateryObj) => {
       <p> Location: ${eateryObj.city}, ${eateryObj.state} </p>
       <p> Description: ${eateryObj.description} </p>
       <p> Wheelchair accessible: ${eateryObj.wheelchairAccessible} </p>
-      <p> Wifi: ${eateryObj.amenities.wifi} </p>
-      <p> Restrooms: ${eateryObj.amenities.restrooms} </p>
-      <div><button>Add to Itinerary</button></div>
+      <p> Wifi: ${eateryObj.ameneties.wifi} </p>
+      <p> Restrooms: ${eateryObj.ameneties.restrooms} </p>
     </section>
   `;
 }

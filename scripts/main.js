@@ -1,9 +1,10 @@
-import { displayAttractions } from './attractions/AttractionList.js';
+
+import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries } from "./eateries/eateryList.js";
-import { makeEateryList } from "./eateries/EateryProvider.js"
+import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
 import { makeParkList } from "./parks/ParkList.js"
 import { showWeather } from "./weather/WeatherList.js";
+import { useBizarre } from './attractions/AttractionProvider.js';
 
 
 
@@ -37,6 +38,20 @@ const startWheelsOnTheGround = () => {
 startWheelsOnTheGround();
 
 
+const mainEvent = document.querySelector(".main");
+
+mainEvent.addEventListener("change", (event) => {
+    console.log(typeof event.target.value)
+    if (event.target.id === "bizarreDropdown") {
+        displayAttractionCards(event.target.value);
+        // const selection = event.target.value
+        // const singleCard = useBizarre().find(bizarre => {
+        //   return  (bizarre.id === selection)
+        // })
+        // console.log(selection, "selection")
+        // console.log(singleCard, "singleCard")
+    }
+})
 
 // singleEatery (event.target.value);
 // const singleEatery = (id){
@@ -49,37 +64,37 @@ startWheelsOnTheGround();
 //     target.innerHTML += eateryHTML
 // };
 
-const eateryElement = document.querySelector("Eatery");
+const eateryElement = document.querySelector(".main");
 
-eateryElement.addEventListener.find("click", (event) => {
-	if (event.target.id === "eateryDetail") {
-		filterEatery("Eateries")
-	} else if (event.target.id === "showAll") {
-		makeEateryList(useEateries())
+eateryElement.addEventListener("change", (event) => {
+    console.log(event.target.value)
+	if (event.target.id === "eateryDropdown") {
+        displayEateryCards(event.target.value);
 	}
 })
 
-const filterEatery = (whatFilter) => {
-	const filterArray = useEateries().filter(singleEatery => {
-		if (singleEatery.businessName.includes(whatFilter)) {
-			return singleEatery;
-		}
-	})
-	makeEateryList(filterArray);
-}
 
-const showdropDownNav = () => {
-	const dropDownElement = document.querySelector('.eateryDropdown');
-	dropDownElement.innerHTML = dropDownNav();
-}
+// const filterEatery = (whatFilter) => {
+// 	const filterArray = useEateries().filter(singleEatery => {
+// 		if (singleEatery.businessName.includes(whatFilter)) {
+// 			return singleEatery;
+// 		}
+// 	})
+// 	makeEateryList(filterArray);
+// }
+
+// const showdropDownNav = () => {
+// 	const dropDownElement = document.querySelector('.eateryDropdown');
+// 	dropDownElement.innerHTML = dropDownNav();
+// }
 
 
-const startEIA = () => {
-	showdropDownNav();
-	loadEateries()
-		.then(eateryArray => {
-			makeEateryList(eateryArray)
-		})
-}
+// const startEIA = () => {
+// 	showdropDownNav();
+// 	loadEateries()
+// 		.then(eateryArray => {
+// 			makeEateryList(eateryArray)
+// 		})
+// }
 
-startEIA();
+// startEIA();
