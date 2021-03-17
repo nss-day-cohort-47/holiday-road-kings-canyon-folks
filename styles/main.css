@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+    /* border: solid black 1px; */
+}
+
 h1 {
     font-family: 'Staatliches', sans-serif;
 }
@@ -25,14 +32,6 @@ body {
     display: flex;
 }
 
-footer{
-    background-color: #F1B24A;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70px;
-}
 
 .eateryDropdown{
     background-color: #4D774E;
@@ -90,13 +89,19 @@ footer{
 .savedItinerary{
     border: solid #4D774E 8px;
     padding: 5px;
-
+    
 }
 
 #weather{
+    font-family: 'Staatliches', sans-serif;
+    letter-spacing: 2px;
     border: 2px solid black;
-    padding: 5px;
+    padding: 5px 5px 10px 5px;
     margin-bottom: 5px;
+}
+
+.icon {
+    width: 45px;
 }
 
 .form{
@@ -128,4 +133,13 @@ footer{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
+}
+
+.footer{
+    background-color: #F1B24A;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
 }

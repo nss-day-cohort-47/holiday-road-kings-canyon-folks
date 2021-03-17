@@ -2,6 +2,7 @@ import { displayAttractions } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
 import { makeParkList } from "./parks/ParkList.js"
+import { showWeather } from "./weather/WeatherList.js";
 
 
 
@@ -20,7 +21,14 @@ const startWheelsOnTheGround = () => {
     makeParkList();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
-    getWeatherForecast(latitude, longitude);
+    //!!!!              will have to be called after park data with then method
+    //   ***  Call getWeatherForecast with coordinates as arguments
+    getWeatherForecast(latitude, longitude)
+    //   ***  Then parse data (array)  ***   //
+    .then((data) => {
+        //   ***  Call showWeather with parsed data
+      showWeather(data);
+    });
 
 }
 
