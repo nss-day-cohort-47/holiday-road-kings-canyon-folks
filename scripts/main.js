@@ -16,9 +16,11 @@ let longitude = -86.7844;
 //   ***  Function to start app processes  ***   //
 
 const startWheelsOnTheGround = () => {
+    //populating makeParkCard with API data with getParks function here. 
     getParks().then((parkResp) => {
         makeParkCard(parkResp);
     });
+
 	displayAttractions();
 	displayEateries();
     
