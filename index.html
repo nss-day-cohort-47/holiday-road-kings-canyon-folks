@@ -32,31 +32,52 @@
 
             <!---Pick your Park--->
             <div class="parkSection">
-                <select class="parkDropdown">
-                    <option value="">Select Park</option>
-                </select>
-
+                <div class="parkHeader">
+                    <div class="parkTitle">PICK YOUR Park</div>
+                    <div class="parkSelect">
+                        <select class="parkDropdown">
+                            <option value="">Select Park</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="parkCard">
+                    <div class="parkDetail"></div>
+                    <button type="button" class="addButton">Add to Itinerary</button>
+                </div>
             </div>
-            <!---Pick your Eateries--->
+            <!---Pick your Eatery--->
             <div class="eaterySection">
-                <select class="eateryDropdown">
-                    <option value="">Select Eatery</option>
-                </select>
+                <div class="eateryHeader">
+                    <div class="eateryTitle">PICK YOUR EATERY</div>
+                    <div class="eaterySelect">
+                        <select class="eateryDropdown">
+                            <option id="search">Select Eatery</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="eateryCard">
+                    <div class="eateryDetail"></div>
+                    <button type="button" class="addButton">Add to Itinerary</button>
+                </div>
             </div>
             <!---Pick your Bizarre--->
-            <div class="bizarreSectionFlex">
-                <select id="bizarreDropdown">
-                    <option value="">Select Bizarre Attraction</option>
-                </select>
-             <div id="bizarreSection">
-
-             </div>
-
+            <div class="bizarreSection">
+                <div class="bizarreHeader">
+                    <div class="bizarreTitle">PICK YOUR BIZARRE ATTRACTION</div>
+                    <div class="bizarreSelect">
+                        <select class="bizarreDropdown">
+                            <option value="">Select Bizarre Attraction </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="bizarreCard">
+                    <div class="bizarreDetail"></div>
+                    <button type="button" class="addButton">Add to Itinerary</button>
+                </div>
+            </div>
         </div>
-           
-    </div>
-         <!---Aside--->
-        <aside class="aside">
+        <!---Aside--->
+        <div class="aside">
             <div class="itineraryAside">
                 <h2 class="itineraryHeader">YOUR ITINERARY</h2>
                 <form class="form">
@@ -88,12 +109,12 @@
 
             </div>
 
-        </aside>
+        </div>
     </div>
     <!---Footer--->
     <div class="footer">
         <footer>
-            <p>&copy; 2021 King Canyon Folks</p>
+            <p>&copy; 2021 Kings Canyon Folks</p>
         </footer>
     </div>
     <script type="module" src="./scripts/main.js"></script>
