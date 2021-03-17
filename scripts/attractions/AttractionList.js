@@ -38,7 +38,9 @@ export const displayAttractions = () => {
     })
 };
 
-export const displayAttractionCards = () => {
+
+
+export const displayAttractionCards = (singleCard) => {
 
     //* Since we want to first get the data and then use the data, we will first set a variable to an empty array
 
@@ -49,11 +51,12 @@ export const displayAttractionCards = () => {
     getBizarre().then(() => {
         bizarreCollection = useBizarre()
         console.log(bizarreCollection, "test")
-
+        
     })
 
     //* Following that function we want to run another .then() which contains another anonymous function which will finally populate the area of the DOM we want.
 
+    
     .then(() => {
         //* First we set a 'target' location for where we want this html to be inserted
         const target = document.querySelector("#bizarreSection")
@@ -70,3 +73,10 @@ export const displayAttractionCards = () => {
 })
 };
   
+// let singleAttraction = (id) =>{
+
+//  bizarreCollection.find(bizarre => {
+//     return (bizarre.id = id)
+// })
+// console.log(singleAttraction, "testing .find")
+// }

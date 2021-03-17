@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 
 import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
-=======
-import { displayAttractions } from './attractions/AttractionList.js';
->>>>>>> main
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
 import { makeParkList } from "./parks/ParkList.js"
 import { showWeather } from "./weather/WeatherList.js";
+import { useBizarre } from './attractions/AttractionProvider.js';
 
 
 
@@ -41,24 +38,18 @@ const startWheelsOnTheGround = () => {
 startWheelsOnTheGround();
 
 
-<<<<<<< HEAD
 const mainEvent = document.querySelector(".main");
 
 mainEvent.addEventListener("change", (event) => {
+    console.log(event.target.value)
     if (event.target.id === "bizarreDropdown") {
-        displayAttractionCards();
+        const selection = event.target.value
+        const singleCard = useBizarre.find(bizarre => {
+          return  (bizarre.id === selection)
+        })
+        console.log(selection, "selection")
+        console.log(singleCard, "singleCard")
+        displayAttractionCards(singleCard);
     }
 })
 
-
-// applicationElement.addEventListener("change", event => {
-//     if (event.target.id === "yearSelection") {
-//       const yearAsNumber = parseInt(event.target.value)
-  
-//       console.log(`User wants to see posts since ${yearAsNumber}`)
-//       //invoke a filter function passing the year as an argument
-//       showFilteredPosts(yearAsNumber);
-//     }
-//   })
-=======
->>>>>>> main
