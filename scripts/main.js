@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 
 import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
+=======
+import { displayAttractions } from './attractions/AttractionList.js';
+>>>>>>> main
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
+import { makeParkList } from "./parks/ParkList.js"
+import { showWeather } from "./weather/WeatherList.js";
+
 
 
 //!!!!   define latitude and longitude to get forecast to render
@@ -16,17 +23,25 @@ let longitude = -86.7844;
 const startWheelsOnTheGround = () => {
 	displayAttractions();
 	displayEateries();
+    makeParkList();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
-    getWeatherForecast(latitude, longitude);
+    //!!!!              will have to be called after park data with then method
+    //   ***  Call getWeatherForecast with coordinates as arguments
+    getWeatherForecast(latitude, longitude)
+    //   ***  Then parse data (array)  ***   //
+    .then((data) => {
+        //   ***  Call showWeather with parsed data
+      showWeather(data);
+    });
 
 }
-
 
 
 startWheelsOnTheGround();
 
 
+<<<<<<< HEAD
 const mainEvent = document.querySelector(".main");
 
 mainEvent.addEventListener("change", (event) => {
@@ -45,3 +60,5 @@ mainEvent.addEventListener("change", (event) => {
 //       showFilteredPosts(yearAsNumber);
 //     }
 //   })
+=======
+>>>>>>> main

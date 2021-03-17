@@ -1,63 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Staatliches&display=swap');
+    </style>
     <title>Wheels on the Ground</title>
 </head>
 <header>
     <!---Header--->
     <div class="header">
-
+        <img class="logo" src="./images/logo.png" alt="Wheels on the Ground logo">
+        <H1 class="headerTitle">Wheels on the ground</H1>
     </div>
 </header>
+
 <body>
-    <main class="main">
-    <!---Intro Paragraph--->
-    <div class="intro">
+    <div class="main">
+        <div class="content">
+            <!---Intro Paragraph--->
+            <div class="intro">
+                <h3>Welcome to wheels on the ground! Our goal is to make traveling to national parks accessible for
+                    everyone. This tool allows you to plan your trip based on handicap-friendly features. All you need
+                    to do is add a park, eating and attraction options to your itinerary, then go on your adventure!
+                </h3>
+            </div>
 
-    </div>
-    <!---Pick your Park--->
-    <div class="parkSection">
+            <!---Pick your Park--->
+            <div class="parkSection">
+                <select class="parkDropdown">
+                    <option value="">Select Park</option>
+                </select>
 
-    </div>
-    <!---Pick your Eateries--->
-    <div class="eaterySection">
-        <select class="eateryDropdown">
-            <option value="">Select Eatery</option>
-        </select>
-    </div>
-    <!---Pick your Bizarre--->
-    <div class="bizarreSectionFlex">
-        <select id="bizarreDropdown">
-            <option value="">Select Bizarre Attraction</option>
-        </select>
-        <div id="bizarreSection">
+            </div>
+            <!---Pick your Eateries--->
+            <div class="eaterySection">
+                <select class="eateryDropdown">
+                    <option value="">Select Eatery</option>
+                </select>
+            </div>
+            <!---Pick your Bizarre--->
+            <div class="bizarreSectionFlex">
+                <select id="bizarreDropdown">
+                    <option value="">Select Bizarre Attraction</option>
+                </select>
+             <div id="bizarreSection">
+
+             </div>
 
         </div>
-
+           
     </div>
+         <!---Aside--->
+        <aside class="aside">
+            <div class="itineraryAside">
+                <h2 class="itineraryHeader">YOUR ITINERARY</h2>
+                <form class="form">
+                    <label for="nameBox">Name Itinerary:</label>
+                    <input id="nameBox" type="text" class="nameBox">
+                </form>
 
-    <!---Aside--->
-    <aside>
-        <div class="itinerary">
-            <div id="weather">
+                <div id="parkAside">
+                    <h4><u>Your Park:</u></h4>
+                </div>
+
+                <div id="weather">
+                    <h4><u>Upcoming Weather Report:</u></h4>
+                </div>
+
+                <div id="eateryAside">
+                    <h4><u>Your Eatery:</u></h4>
+                </div>
+
+                <div id="bizarreAside">
+                    <h4><u>Your Bizarre Attraction:</u></h4>
+                </div>
+
+                <button type="button" id="saveButton">Save Itinerary</button>
+            </div>
+
+            <div class="savedItinerary">
+                <h2 class="itineraryHeader">SAVED ITINERARIES</h2>
 
             </div>
 
-        </div>
-    </aside>
-
-    <!---Footer--->   
-    <footer>
-        <div class="footer">
-        <p>&copy; 2021 Kings Canyon Folks</p>
-        </div>
-    </footer>
-    </main>
+        </aside>
+    </div>
+    <!---Footer--->
+    <div class="footer">
+        <footer>
+            <p>&copy; 2021 King Canyon Folks</p>
+        </footer>
+    </div>
     <script type="module" src="./scripts/main.js"></script>
 
 </body>
+
 </html>
