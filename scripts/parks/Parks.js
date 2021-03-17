@@ -12,14 +12,14 @@ export const parkCard = (nps) => {
     if (imagesArray[0] ) {
         let imageObject = imagesArray[0]
         imageUrl = imageObject.url
+        imageAltText = imageObject.altText
     }
-    return`
+    return `
     <h2>${nps.fullName}</h2>
-    <div><img class="parkImg" src="${imageUrl}" alt="${nps.images.altText}"></div>
+    <div><img class="parkImg" src="${imageUrl}" alt="${imageAltText}"></div>
     <p>Location: ${nps.states}</p>
-    <p>Website: ${nps.url}</p>
-    <p>Hours: ${nps.operatingHours.standardHours}</p>
     <p>${nps.description}</p>
+    <p><a href="${nps.url}">More Information</a></p>
     `
 }
 

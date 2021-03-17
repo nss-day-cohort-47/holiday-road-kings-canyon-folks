@@ -1,7 +1,8 @@
 import { displayAttractions } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
-import { makeParkList, makeParkCard } from "./parks/ParkList.js"
+import { makeParkCard } from "./parks/ParkList.js"
+import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 
 
@@ -12,14 +13,15 @@ let longitude = -86.7844;
 
 
 
-
 //   ***  Function to start app processes  ***   //
 
 const startWheelsOnTheGround = () => {
+    getParks().then((parkResp) => {
+        makeParkCard(parkResp);
+    });
 	displayAttractions();
 	displayEateries();
-    makeParkList();
-    makeParkCard();
+    
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
     //!!!!              will have to be called after park data with then method
