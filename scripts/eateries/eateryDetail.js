@@ -6,7 +6,7 @@ return `
 
 // `
 //     <section class="eateryTile">
-//       <h2>${eateryObj.businessName} </h2>
+//       <h2 class="eateryHeadline">${eateryObj.businessName} </h2>
 //       <p> Location: ${eateryObj.city}, ${eateryObj.state} </p>
 //       <p> Description: ${eateryObj.description} </p>
 //       <p> Wheelchair accessible: ${eateryObj.wheelchairAccessible} </p>
