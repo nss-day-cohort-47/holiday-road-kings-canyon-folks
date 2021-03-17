@@ -41,7 +41,7 @@ body {
     margin: 3px;
 }
 
-.bizarreDropdown{
+#bizarreDropdown{
     background-color: #4D774E;
     color: white;
     width: 200px;

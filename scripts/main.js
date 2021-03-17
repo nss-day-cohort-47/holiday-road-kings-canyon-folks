@@ -41,15 +41,15 @@ startWheelsOnTheGround();
 const mainEvent = document.querySelector(".main");
 
 mainEvent.addEventListener("change", (event) => {
-    console.log(event.target.value)
+    console.log(typeof event.target.value)
     if (event.target.id === "bizarreDropdown") {
-        const selection = event.target.value
-        const singleCard = useBizarre.find(bizarre => {
-          return  (bizarre.id === selection)
-        })
-        console.log(selection, "selection")
-        console.log(singleCard, "singleCard")
-        displayAttractionCards(singleCard);
+        displayAttractionCards(event.target.value);
+        // const selection = event.target.value
+        // const singleCard = useBizarre().find(bizarre => {
+        //   return  (bizarre.id === selection)
+        // })
+        // console.log(selection, "selection")
+        // console.log(singleCard, "singleCard")
     }
 })
 
