@@ -1,6 +1,7 @@
 import { displayAttractions } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries } from "./eateries/eateryList.js";
+import { makeEateryList } from "./eateries/EateryProvider.js"
 import { makeParkList } from "./parks/ParkList.js"
 import { showWeather } from "./weather/WeatherList.js";
 
@@ -37,3 +38,48 @@ startWheelsOnTheGround();
 
 
 
+// singleEatery (event.target.value);
+// const singleEatery = (id){
+//     let foundEatery = useEateries().find(eatery => eatery.id === id);
+//     //use foundBizarre to be the object that is passed into Attraction card HTML representation
+//     //could be a refactored function based off of display attractions 
+//     //
+//     //const target = document.querySelector(the target id or class);
+//     let eateryHTML = SingleEateryCard(foundEatery)
+//     target.innerHTML += eateryHTML
+// };
+
+const eateryElement = document.querySelector("Eatery");
+
+eateryElement.addEventListener.find("click", (event) => {
+	if (event.target.id === "eateryDetail") {
+		filterEatery("Eateries")
+	} else if (event.target.id === "showAll") {
+		makeEateryList(useEateries())
+	}
+})
+
+const filterEatery = (whatFilter) => {
+	const filterArray = useEateries().filter(singleEatery => {
+		if (singleEatery.businessName.includes(whatFilter)) {
+			return singleEatery;
+		}
+	})
+	makeEateryList(filterArray);
+}
+
+const showdropDownNav = () => {
+	const dropDownElement = document.querySelector('.eateryDropdown');
+	dropDownElement.innerHTML = dropDownNav();
+}
+
+
+const startEIA = () => {
+	showdropDownNav();
+	loadEateries()
+		.then(eateryArray => {
+			makeEateryList(eateryArray)
+		})
+}
+
+startEIA();
