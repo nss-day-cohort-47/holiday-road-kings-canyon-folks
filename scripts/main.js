@@ -44,16 +44,19 @@ startWheelsOnTheGround();
 //! Event Listeners for Bizarre Section
 const bizarreEvent = document.querySelector("#bizarreDropdown");
 
+let currentlySelected = "";
 bizarreEvent.addEventListener("change", (event) => {
-    console.log(typeof event.target.value)
+    currentlySelected = event.target.value
+    console.log(currentlySelected)
         displayAttractionCards(event.target.value);
     }
-)
-
+    )
+    
 const bizarreEventButton = document.querySelector(".addBizarreButton")
-
-bizarreEventButton.addEventListener("click", (event) => {
-    addAttractionItinerary(event.target.value)
+    
+    bizarreEventButton.addEventListener("click", (event) => {
+        console.log(event.target, "test3")
+        addAttractionItinerary(currentlySelected)
 })
 
 // singleEatery (event.target.value);

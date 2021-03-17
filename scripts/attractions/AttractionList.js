@@ -108,6 +108,6 @@ export const addAttractionItinerary = (id) => {
             bizarreHTML = AddBizarreItin(foundBizarre)
             
             //* Finally we want to return our string of html items and place them at the target location on the DOM.
-            return target.innerHTML += bizarreHTML;
+            return target.innerHTML = bizarreHTML;
         })
 }
