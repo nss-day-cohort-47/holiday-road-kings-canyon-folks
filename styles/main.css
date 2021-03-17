@@ -33,7 +33,7 @@ body {
 }
 
 
-.eateryDropdown{
+#eateryDropdown{
     background-color: #4D774E;
     color: white;
     width: 200px;
@@ -162,7 +162,7 @@ body {
 
 .eateryCard{
     border: solid #164A41 5px;
-    display: flex;
+    padding: 5px;
 }
 
 .eateryHeadline{
@@ -196,6 +196,7 @@ body {
 
 .bizarreCard{
     border: solid #164A41 5px;
+    padding: 5px;
 }
 
 .bizarreHeadline{
@@ -219,6 +220,7 @@ body {
 
 .parkCard{
     border: solid #164A41 5px;
+    padding: 5px;
 }
 
 .parkHeadline{
@@ -229,3 +231,11 @@ body {
     color: #164A41
 }
 
+.eateryButton{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
