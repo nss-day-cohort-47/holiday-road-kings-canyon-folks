@@ -116,6 +116,10 @@ body {
     margin: 3px;
     text-align: center;
 }
+#saveButton:disabled{
+    background-color:#97a5a3;
+     color: rgb(204, 202, 202);
+}
 
 #parkAside{
     border: 2px solid black;
