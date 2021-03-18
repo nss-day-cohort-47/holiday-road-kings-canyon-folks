@@ -4,6 +4,12 @@
 import { park, parkCard, parkItin, moreParkDetails } from "./Parks.js";
 import { useParks } from "./ParkProvider.js";
 
+let foundParks = {}
+
+export const parkObject = () => {
+  return foundParks
+}
+
 
 //function to render HTML from Parks.js (parkCard) to the DOM, this function also filters the parks by their corresponding parkCode from the API data. 
 export const makeParkCard = (parkData) => {
@@ -19,8 +25,8 @@ export const makeParkCard = (parkData) => {
 export const makeParkList = (parkData) => {
   const parkObj = document.querySelector(".parkDropdown");
   let parkDropHTML = "";
-  for (const parkObject of parkData) {
-    parkDropHTML += park(parkObject);
+  for (const parkThing of parkData) {
+    parkDropHTML += park(parkThing);
   }
   return (parkObj.innerHTML += parkDropHTML);
 };

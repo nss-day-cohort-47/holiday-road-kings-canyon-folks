@@ -2,7 +2,7 @@
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails } from "./parks/ParkList.js"
+import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails, foundParks } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
