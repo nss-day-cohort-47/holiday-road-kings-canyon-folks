@@ -22,7 +22,7 @@ export const AddEateryAside = (eateryObj) => {
 
 export const eateryMoreDetail = (eateryObj) => {
   return `
-    <section class="eateryMoreDetail">
+    <section class="eateryMoreDetails">
       <p> Wheelchair accessible: ${eateryObj.ameneties.wheelchairAccessible === true ? "Available" : "Unavailable"} </p>
       <p> Wifi: ${eateryObj.ameneties.wifi === true ? "Available" : "Unavailable"} </p>
       <p> Restrooms: ${eateryObj.ameneties.restrooms=== true ? "Available" : "Unavailable"} </p>
