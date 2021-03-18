@@ -17,7 +17,7 @@ let longitude = -86.7844;
 //     ****   (itinerary preview filled)   
 //     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
-    // if(selectedPark === "" || selectedEatery === "" || selectedBizarre === "") {
+    // if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
     document.querySelector("#saveButton").disabled=true;
     // } else {
     //     document.querySelector("#saveButton").disabled=false;
