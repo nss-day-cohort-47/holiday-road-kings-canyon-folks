@@ -186,6 +186,14 @@ body {
     justify-content: flex-end;
 }
 
+.addBizarreButton{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
 
 .bizarreSection{
     padding-top: 10px;

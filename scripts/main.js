@@ -1,5 +1,5 @@
 
-import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
+import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList } from "./parks/ParkList.js"
@@ -80,20 +80,25 @@ parkEvent.addEventListener("change", (event) => {
     makeParkCard(event.target.value)
 })
 
-const mainEvent = document.querySelector(".main");
 
-mainEvent.addEventListener("change", (event) => {
-    console.log(typeof event.target.value)
-    if (event.target.id === "bizarreDropdown") {
+
+
+//! Event Listeners for Bizarre Section
+const bizarreEvent = document.querySelector("#bizarreDropdown");
+
+let currentlySelected = "";
+bizarreEvent.addEventListener("change", (event) => {
+    currentlySelected = event.target.value
+    console.log(currentlySelected)
         displayAttractionCards(event.target.value);
-        // const selection = event.target.value
-        // const singleCard = useBizarre().find(bizarre => {
-        //   return  (bizarre.id === selection)
-        // })
-        // console.log(selection, "selection")
-        // console.log(singleCard, "singleCard")
     }
+    )
     
+const bizarreEventButton = document.querySelector(".addBizarreButton")
+    
+    bizarreEventButton.addEventListener("click", (event) => {
+        console.log(event.target, "test3")
+        addAttractionItinerary(currentlySelected)
 })
 
 
