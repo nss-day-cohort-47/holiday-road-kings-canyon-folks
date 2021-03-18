@@ -2,7 +2,7 @@
 import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList } from "./parks/ParkList.js"
+import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
@@ -80,6 +80,12 @@ parkEvent.addEventListener("change", (event) => {
     makeParkCard(event.target.value)
 })
 
+//event listener which puts selected park into the aside when you press the button
+const parkEventButton = document.querySelector(".addParkButton")
+    parkEventButton.addEventListener("click", (event) => {
+        // console.log(event.target "parkbutton")
+        addParkItinerary(currentlySelectedPark)
+    })
 
 
 
