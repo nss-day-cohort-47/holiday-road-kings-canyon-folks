@@ -6,16 +6,46 @@ import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.j
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
+import { createItineraryPost } from './itineraries/ItineraryProvider.js';
 
 
 
 //!!!!   define latitude and longitude to get forecast to render
 let latitude = 36.1659;
 let longitude = -86.7844;
-
+//   ***  Function that checks if all three conditions are met   
+//     ****   (itinerary preview filled)   
+//     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
-    document.querySelector("#saveButton").disabled=true
+    // if(selectedPark === "" || selectedEatery === "" || selectedBizarre === "") {
+    document.querySelector("#saveButton").disabled=true;
+    // } else {
+    //     document.querySelector("#saveButton").disabled=false;
+    // }
 }
+//   ***  Function to save itinerary when save button is clicked
+// mainEvent.addEventListener("click", event => {
+//     if(event.target.id === "saveButton") {
+//         const name = document.querySelector("input[name='nameBox']");
+//         const park = 
+//         const eatery = 
+//         const bizarre =
+
+//         const itineraryPostObject = {
+//             name: ,
+//             park: ,
+//             eatery: ,
+//             bizarre: ,
+//         };
+
+//         createItineraryPost(itineraryPostObject)
+//         .then(response => {
+//             console.log("JSON Response: ", response);
+
+//         })
+//     }
+// })
+
 
 //   ***  Function to start app processes  ***   //
 
@@ -39,7 +69,6 @@ const startWheelsOnTheGround = () => {
     });
 
 }
-
 
 startWheelsOnTheGround();
 
