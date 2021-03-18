@@ -10,70 +10,6 @@ import { bizarreObject } from './attractions/AttractionList.js'
 import { moreAttractionDetails } from './attractions/Attraction.js';
 import { createItineraryPost } from './itineraries/ItineraryProvider.js';
 
-
-
-//!!!!   define latitude and longitude to get forecast to render
-let latitude = 36.1659;
-let longitude = -86.7844;
-//   ***  Function that checks if all three conditions are met   
-//     ****   (itinerary preview filled)   
-//     ****   sets save itinerary button to disabled or enabled
-const saveButton = () => {
-    // if(selectedPark === "" || selectedEatery === "" || selectedBizarre === "") {
-    document.querySelector("#saveButton").disabled=true;
-    // } else {
-    //     document.querySelector("#saveButton").disabled=false;
-    // }
-}
-//   ***  Function to save itinerary when save button is clicked
-// mainEvent.addEventListener("click", event => {
-//     if(event.target.id === "saveButton") {
-//         const name = document.querySelector("input[name='nameBox']");
-//         const park = 
-//         const eatery = 
-//         const bizarre =
-
-//         const itineraryPostObject = {
-//             name: ,
-//             park: ,
-//             eatery: ,
-//             bizarre: ,
-//         };
-
-//         createItineraryPost(itineraryPostObject)
-//         .then(response => {
-//             console.log("JSON Response: ", response);
-
-//         })
-//     }
-// })
-
-
-//   ***  Function to start app processes  ***   //
-
-const startWheelsOnTheGround = () => {
-    //populating makeParkList with API data from getParks function here. 
-    getParks().then((parkResp) => {
-        makeParkList(parkResp);
-    });
-	displayAttractions();
-	displayEateries();
-    saveButton();
-    //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
-    //!!!!        Note  arguments will be derived from selected park's coordinates 
-    //!!!!              will have to be called after park data with then method
-    //   ***  Call getWeatherForecast with coordinates as arguments
-    getWeatherForecast(latitude, longitude)
-    //   ***  Then parse data (array)  ***   //
-    .then((data) => {
-        //   ***  Call showWeather with parsed data
-      showWeather(data);
-    });
-
-}
-
-startWheelsOnTheGround();
-
 //event listener to select a park from the drop down and display a single corresponding park card
 const parkEvent = document.querySelector(".parkDropdown");
 let currentlySelectedPark = "";
@@ -87,6 +23,7 @@ const parkEventButton = document.querySelector(".addParkButton")
     parkEventButton.addEventListener("click", (event) => {
         // console.log(event.target "parkbutton")
         addParkItinerary(currentlySelectedPark)
+        saveButton();
     })
 
 
@@ -107,6 +44,7 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
     bizarreEventButton.addEventListener("click", (event) => {
         console.log(event.target, "test3")
         addAttractionItinerary(currentlySelected)
+        saveButton();
 })
 
 //! Pop Up Modal
@@ -154,4 +92,69 @@ const eateryEventButton = document.querySelector(".eateryButton")
         eateryEventButton.addEventListener("click", (event) => {
         console.log(event.target, ".eateryButton")
         addEateryItinerary(currentlySelectedEatery)
+        saveButton();
 })
+
+//!!!!   define latitude and longitude to get forecast to render
+let latitude = 36.1659;
+let longitude = -86.7844;
+//   ***  Function that checks if all three conditions are met   
+//     ****   (itinerary preview filled)   
+//     ****   sets save itinerary button to disabled or enabled
+const saveButton = () => {
+    console.log(currentlySelected, currentlySelectedEatery, currentlySelectedPark)
+    if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
+    document.querySelector("#saveButton").disabled=true;
+    } else {
+        document.querySelector("#saveButton").disabled=false;
+    }
+}
+//   ***  Function to save itinerary when save button is clicked
+// mainEvent.addEventListener("click", event => {
+//     if(event.target.id === "saveButton") {
+//         const name = document.querySelector("input[name='nameBox']");
+//         const park = 
+//         const eatery = 
+//         const bizarre = bizarreObject();
+
+//         const itineraryPostObject = {
+//             name: ,
+//             park: ,
+//             eatery: ,
+//             bizarre: ,
+//         };
+
+//         createItineraryPost(itineraryPostObject)
+//         .then(response => {
+//             console.log("JSON Response: ", response);
+
+//         })
+//     }
+// })
+
+
+//   ***  Function to start app processes  ***   //
+
+const startWheelsOnTheGround = () => {
+    //populating makeParkList with API data from getParks function here. 
+    getParks().then((parkResp) => {
+        makeParkList(parkResp);
+    });
+	displayAttractions();
+	displayEateries();
+    saveButton();
+    //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
+    //!!!!        Note  arguments will be derived from selected park's coordinates 
+    //!!!!              will have to be called after park data with then method
+    //   ***  Call getWeatherForecast with coordinates as arguments
+    getWeatherForecast(latitude, longitude)
+    //   ***  Then parse data (array)  ***   //
+    .then((data) => {
+        //   ***  Call showWeather with parsed data
+      showWeather(data);
+    });
+
+}
+
+startWheelsOnTheGround();
+
