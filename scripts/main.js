@@ -17,6 +17,7 @@ let longitude = -86.7844;
 //     ****   (itinerary preview filled)   
 //     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
+    console.log(currentlySelected, currentlySelectedEatery, currentlySelectedPark)
     // if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
     document.querySelector("#saveButton").disabled=true;
     // } else {
@@ -85,6 +86,7 @@ const parkEventButton = document.querySelector(".addParkButton")
     parkEventButton.addEventListener("click", (event) => {
         // console.log(event.target "parkbutton")
         addParkItinerary(currentlySelectedPark)
+        saveButton();
     })
 
 
@@ -105,6 +107,7 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
     bizarreEventButton.addEventListener("click", (event) => {
         console.log(event.target, "test3")
         addAttractionItinerary(currentlySelected)
+        saveButton();
 })
 
 
@@ -132,4 +135,5 @@ const eateryEventButton = document.querySelector(".eateryButton")
         eateryEventButton.addEventListener("click", (event) => {
         console.log(event.target, ".eateryButton")
         addEateryItinerary(currentlySelectedEatery)
+        saveButton();
 })
