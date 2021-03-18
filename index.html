@@ -43,6 +43,15 @@
                 </div>
                 <div class="parkCard">
                     <div class="parkDetail"></div>
+                    <button type="button" id="moreParkDetails">More Details</button>
+                    <div class="parkDetailsPopUp" id="parkModal">
+                        <div class="parkModalContent">
+                            <span id="parkClose"> &times;</span>
+                            <div class="parkDetailsTarget">
+                                
+                            </div>
+                        </div>
+                    </div>
                     <button type="button" class="addParkButton">Add to Itinerary</button>
                 </div>
             </div>
@@ -104,8 +113,11 @@
                     <input id="nameBox" name="nameBox" type="text" class="nameBox">
                 </form>
 
-                <div id="parkAside">
+                <div>
                     <h4><u>Your Park:</u></h4>
+                    <div id ="parkAside">
+
+                    </div>
                 </div>
 
                 <div id="weather">

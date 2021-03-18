@@ -19,13 +19,18 @@ export const parkCard = (nps) => {
     <h2>${nps.fullName}</h2>
     <div><img class="parkImg" src="${imageUrl}" alt="${imageAltText}"></div>
     <p>Location: ${nps.states}</p>
-    <p>${nps.description}</p>
-    <p><a href="${nps.url}">More Information</a></p>
     `
 }
 
 export const parkItin = (nps) => {
     return `
     <h3>${nps.fullName}</h3>
+    `
+}
+
+export const moreParkDetails = (nps) => {
+    return `
+    <p>${nps.description}</p>
+    <p><a href="${nps.url}">Visit the ${nps.fullName} official site here</a></p>
     `
 }

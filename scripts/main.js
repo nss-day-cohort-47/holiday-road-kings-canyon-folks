@@ -1,8 +1,8 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
+import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails, eateryObject } from "./eateries/eateryList.js";
+import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails, parkObject } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
@@ -16,15 +16,38 @@ let currentlySelectedPark = "";
 parkEvent.addEventListener("change", (event) => {
     currentlySelectedPark = event.target.value
     makeParkCard(event.target.value)
+    parkButton.style.display = "block";
 })
 
 //event listener which puts selected park into the aside when you press the button
 const parkEventButton = document.querySelector(".addParkButton")
     parkEventButton.addEventListener("click", (event) => {
-        // console.log(event.target "parkbutton")
+        
         addParkItinerary(currentlySelectedPark)
         saveButton();
     })
+
+//park more details button and pop-up!
+//! Pop Up Modal
+
+const parkPopUp = document.getElementById("parkModal")
+const parkButton = document.getElementById("moreParkDetails")
+const parkSpan = document.getElementById("parkClose")
+
+parkButton.onclick = () => {
+    parkPopUp.style.display = "block";
+    displayParkDetails(currentlySelectedPark)
+}
+
+parkSpan.onclick = () => {
+    parkPopUp.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == parkPopUp) {
+        parkPopUp.style.display = "none";
+    }
+}
 
 
 
