@@ -2,7 +2,7 @@ export const eateryDetail = (eateryObj) => {
 return `
   <option value="${eateryObj.id}">${eateryObj.businessName}</option>
   `
-}
+};
 
 export const eateryCard = (eateryObj) => {
   return `
@@ -18,7 +18,7 @@ export const AddEateryAside = (eateryObj) => {
   return `
     <h3>${eateryObj.businessName}</h3>
   `
-}
+};
 
 export const eateryMoreDetail = (eateryObj) => {
   return `

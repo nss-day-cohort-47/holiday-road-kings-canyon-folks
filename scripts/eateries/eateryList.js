@@ -45,7 +45,7 @@ export const addEateryItinerary = (id) => {
 
 	let eateryCollection = []
 
-	getEateries().then(() => {
+	getEateries().then((response) => {
 		eateryCollection = useEateries()
 		console.log(eateryCollection, "testEateryCollection")
 
@@ -54,6 +54,7 @@ export const addEateryItinerary = (id) => {
 
 		let eateryHTML = ""
 		eateryHTML = AddEateryAside(foundEateries)
+		console.log(foundEateries, "foundEateries")
 		return target.innerHTML = eateryHTML;
 	})
 }

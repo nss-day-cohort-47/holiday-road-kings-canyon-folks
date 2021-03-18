@@ -24,3 +24,8 @@ export const parkCard = (nps) => {
     `
 }
 
+export const parkItin = (nps) => {
+    return `
+    <h3>${nps.fullName}</h3>
+    `
+}
