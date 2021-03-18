@@ -135,6 +135,11 @@ body {
     margin-bottom: 5px;
 }
 
+.parkImg {
+    height: auto;
+    width: 500px;
+}
+
 .footer{
     background-color: #F1B24A;
     color: black;
