@@ -16,6 +16,7 @@ let currentlySelectedPark = "";
 parkEvent.addEventListener("change", (event) => {
     currentlySelectedPark = event.target.value
     makeParkCard(event.target.value)
+    parkButton.style.display = "block";
 })
 
 //event listener which puts selected park into the aside when you press the button
