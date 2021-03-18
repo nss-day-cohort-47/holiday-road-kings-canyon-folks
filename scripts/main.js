@@ -1,11 +1,13 @@
 
-import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
+import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
+import { bizarreObject } from './attractions/AttractionList.js'
+import { moreAttractionDetails } from './attractions/Attraction.js';
 import { createItineraryPost } from './itineraries/ItineraryProvider.js';
 
 
@@ -95,7 +97,7 @@ const bizarreEvent = document.querySelector("#bizarreDropdown");
 let currentlySelected = "";
 bizarreEvent.addEventListener("change", (event) => {
     currentlySelected = event.target.value
-    console.log(currentlySelected)
+    console.log(currentlySelected, "currentlySelected")
         displayAttractionCards(event.target.value);
     }
     )
@@ -107,6 +109,26 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
         addAttractionItinerary(currentlySelected)
 })
 
+//! Pop Up Modal
+
+const bizarrePopUp = document.getElementById("bizarreModal")
+const bizarreButton = document.getElementById("moreBizarreDetails")
+const span = document.getElementById("close")
+
+bizarreButton.onclick = () =>{
+    bizarrePopUp.style.display = "block";
+    displayMoreDetails(currentlySelected)
+}
+
+span.onclick = () => {
+    bizarrePopUp.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == bizarrePopUp) {
+        bizarrePopUp.style.display = "none";
+    }
+}
 
 const eateryEvent = document.querySelector("#eateryDropdown");
 const eateryElement = document.querySelector(".main");
