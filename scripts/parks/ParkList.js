@@ -1,7 +1,7 @@
 //this is where we create functions to render the data onto the DOM. These functions are not utilizing the getParks function at all, this will happen in main.
 
 //importing functions from the other two modules: park and parkCard create how the data will be displayed in HTML. 
-import { park, parkCard, parkItin } from "./Parks.js";
+import { park, parkCard, parkItin, moreParkDetails } from "./Parks.js";
 import { useParks } from "./ParkProvider.js";
 
 
@@ -27,7 +27,7 @@ export const makeParkList = (parkData) => {
 
 
 
-
+//places the html from Parks.js (parkItin) into the aside.
 export const addParkItinerary = (parkData) => {
   let filterParks = useParks().find(nps => nps.parkCode === parkData)
   const target = document.querySelector("#parkAside")
@@ -37,3 +37,12 @@ export const addParkItinerary = (parkData) => {
   parkItinHTML = parkItin(filterParks);
   return (target.innerHTML = parkItinHTML)
 };
+
+
+export const displayParkDetails = (parkData) => {
+  let filterParks = useParks().find(nps => nps.parkCode === parkData)
+  const target = document.querySelector(".parkDetailsTarget")
+  let parkDetailHTML = "";
+  parkDetailHTML = moreParkDetails(filterParks)
+  return target.innerHTML = parkDetailHTML;
+}
