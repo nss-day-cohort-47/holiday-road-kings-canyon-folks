@@ -5,10 +5,22 @@ export const park = (nps) => {
     `
 }
 
-{/* <h2>${nps.fullName}</h2>
-    <div>${nps.images}</div>
+//creating HTML component for park data. In order to specify an index for the array we create the variable imagesArray and specify which index we want to use through that. imageUrl and imageAltText are used to populate the template literals inside of the HTML. 
+export const parkCard = (nps) => {
+    const imagesArray = nps.images
+    let imageUrl = ""
+    let imageAltText = ""
+    if (imagesArray[0] ) {
+        let imageObject = imagesArray[0]
+        imageUrl = imageObject.url
+        imageAltText = imageObject.altText
+    }
+    return `
+    <h2>${nps.fullName}</h2>
+    <div><img class="parkImg" src="${imageUrl}" alt="${imageAltText}"></div>
     <p>Location: ${nps.states}</p>
-    <p>Website: ${nps.url}</p>
-    <p>Hours: ${nps.operatingHours}</p>
     <p>${nps.description}</p>
-    `; */}
+    <p><a href="${nps.url}">More Information</a></p>
+    `
+}
+
