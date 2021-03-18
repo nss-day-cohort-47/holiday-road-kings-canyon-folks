@@ -15,15 +15,17 @@ export const showWeather = (forecast) => {
 
     //   ***   Daily Forecast HTML Template  ***   //
     const dailyForecast = `
-        <div>${date.toLocaleString("en-US", { weekday: "short" }).toUpperCase()}    
+        <div><img class="icon" src="http://openweathermap.org/img/wn/${
+          forecast.daily[i].weather[0].icon
+        }.png">${date
+      .toLocaleString("en-US", { weekday: "short" })
+      .toUpperCase()}    
         ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}       
         ${forecast.daily[i].temp.max.toFixed(0)}&#8457;-${forecast.daily[
       i
     ].temp.min.toFixed(0)}&#8457;    
         ${forecast.daily[i].weather[0].description.toUpperCase()}
-        <img class="icon" src="http://openweathermap.org/img/wn/${
-          forecast.daily[i].weather[0].icon
-        }.png"></div>
+        </div>
         `;
         //   ***  Append Daily Forecast to DOM at DOM Target  ***   //
     DomTarget.innerHTML += dailyForecast;
