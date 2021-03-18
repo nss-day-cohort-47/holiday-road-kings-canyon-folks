@@ -116,6 +116,10 @@ body {
     margin: 3px;
     text-align: center;
 }
+#saveButton:disabled{
+    background-color:#97a5a3;
+     color: rgb(204, 202, 202);
+}
 
 #parkAside{
     border: 2px solid black;
@@ -166,14 +170,15 @@ body {
 }
 
 .eateryHeadline{
-    color: #164A41
+    color: #164A41;
+    font-weight: bold;
 }
 
 .eateryTitle{
-    color: #164A41
+    color: #164A41;
 }
 
-.addButton{
+.addParkButton{
     background-color: #164A41;
     color: white;
     margin: 2px;
@@ -207,8 +212,9 @@ body {
     padding: 5px;
 }
 
-.bizarreHeadline{
-    color: #164A41
+.attractionHeadline{
+    color: #164A41;
+    font-weight: bold;
 }
 
 .bizarreTitle{

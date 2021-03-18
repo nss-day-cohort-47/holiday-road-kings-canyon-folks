@@ -1,23 +1,53 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList } from "./parks/ParkList.js"
+import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
+import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
 import { bizarreObject } from './attractions/AttractionList.js'
 import { moreAttractionDetails } from './attractions/Attraction.js';
+import { createItineraryPost } from './itineraries/ItineraryProvider.js';
 
 
 
 //!!!!   define latitude and longitude to get forecast to render
 let latitude = 36.1659;
 let longitude = -86.7844;
-
+//   ***  Function that checks if all three conditions are met   
+//     ****   (itinerary preview filled)   
+//     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
-    document.querySelector("#saveButton").disabled=true
+    // if(selectedPark === "" || selectedEatery === "" || selectedBizarre === "") {
+    document.querySelector("#saveButton").disabled=true;
+    // } else {
+    //     document.querySelector("#saveButton").disabled=false;
+    // }
 }
+//   ***  Function to save itinerary when save button is clicked
+// mainEvent.addEventListener("click", event => {
+//     if(event.target.id === "saveButton") {
+//         const name = document.querySelector("input[name='nameBox']");
+//         const park = 
+//         const eatery = 
+//         const bizarre =
+
+//         const itineraryPostObject = {
+//             name: ,
+//             park: ,
+//             eatery: ,
+//             bizarre: ,
+//         };
+
+//         createItineraryPost(itineraryPostObject)
+//         .then(response => {
+//             console.log("JSON Response: ", response);
+
+//         })
+//     }
+// })
+
 
 //   ***  Function to start app processes  ***   //
 
@@ -42,7 +72,6 @@ const startWheelsOnTheGround = () => {
 
 }
 
-
 startWheelsOnTheGround();
 
 //event listener to select a park from the drop down and display a single corresponding park card
@@ -53,6 +82,12 @@ parkEvent.addEventListener("change", (event) => {
     makeParkCard(event.target.value)
 })
 
+//event listener which puts selected park into the aside when you press the button
+const parkEventButton = document.querySelector(".addParkButton")
+    parkEventButton.addEventListener("click", (event) => {
+        // console.log(event.target "parkbutton")
+        addParkItinerary(currentlySelectedPark)
+    })
 
 
 
@@ -95,17 +130,7 @@ window.onclick = (event) => {
     }
 }
 
-// singleEatery (event.target.value);
-// const singleEatery = (id){
-//     let foundEatery = useEateries().find(eatery => eatery.id === id);
-//     //use foundBizarre to be the object that is passed into Attraction card HTML representation
-//     //could be a refactored function based off of display attractions 
-//     //
-//     //const target = document.querySelector(the target id or class);
-//     let eateryHTML = SingleEateryCard(foundEatery)
-//     target.innerHTML += eateryHTML
-// };
-
+const eateryEvent = document.querySelector("#eateryDropdown");
 const eateryElement = document.querySelector(".main");
 
 eateryElement.addEventListener("change", (event) => {
@@ -116,27 +141,17 @@ eateryElement.addEventListener("change", (event) => {
 })
 
 
-// const filterEatery = (whatFilter) => {
-// 	const filterArray = useEateries().filter(singleEatery => {
-// 		if (singleEatery.businessName.includes(whatFilter)) {
-// 			return singleEatery;
-// 		}
-// 	})
-// 	makeEateryList(filterArray);
-// }
-
-// const showdropDownNav = () => {
-// 	const dropDownElement = document.querySelector('.eateryDropdown');
-// 	dropDownElement.innerHTML = dropDownNav();
-// }
-
-
-// const startEIA = () => {
-// 	showdropDownNav();
-// 	loadEateries()
-// 		.then(eateryArray => {
-// 			makeEateryList(eateryArray)
-// 		})
-// }
-
-// startEIA();
+let currentlySelectedEatery = "";
+eateryEvent.addEventListener("change", (event) => {
+    currentlySelectedEatery = event.target.value
+    console.log(currentlySelectedEatery)
+         displayEateryCards(event.target.value);
+    }
+    )
+    
+const eateryEventButton = document.querySelector(".eateryButton")
+    
+        eateryEventButton.addEventListener("click", (event) => {
+        console.log(event.target, ".eateryButton")
+        addEateryItinerary(currentlySelectedEatery)
+})
