@@ -2,7 +2,8 @@
 import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
-import { makeParkList } from "./parks/ParkList.js"
+import { makeParkCard, makeParkList } from "./parks/ParkList.js"
+import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
 
@@ -19,9 +20,12 @@ const saveButton = () => {
 //   ***  Function to start app processes  ***   //
 
 const startWheelsOnTheGround = () => {
+    //populating makeParkList with API data from getParks function here. 
+    getParks().then((parkResp) => {
+        makeParkList(parkResp);
+    });
 	displayAttractions();
 	displayEateries();
-    makeParkList();
     saveButton();
     //!!!!   call weather forecast funtion, passing latitude and longitude as arguments
     //!!!!        Note  arguments will be derived from selected park's coordinates 
@@ -39,6 +43,13 @@ const startWheelsOnTheGround = () => {
 
 startWheelsOnTheGround();
 
+//event listener to select a park from the drop down and display a single corresponding park card
+const parkEvent = document.querySelector(".parkDropdown");
+let currentlySelectedPark = "";
+parkEvent.addEventListener("change", (event) => {
+    currentlySelectedPark = event.target.value
+    makeParkCard(event.target.value)
+})
 
 const mainEvent = document.querySelector(".main");
 
@@ -53,7 +64,9 @@ mainEvent.addEventListener("change", (event) => {
         // console.log(selection, "selection")
         // console.log(singleCard, "singleCard")
     }
+    
 })
+
 
 // singleEatery (event.target.value);
 // const singleEatery = (id){

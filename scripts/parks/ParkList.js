@@ -1,25 +1,26 @@
-//this is where we combine api data from park provider with the html from parks.js
+//this is where we create functions to render the data onto the DOM. These functions are not utilizing the getParks function at all, this will happen in main.
 
-//importing functions from the other two modules: park gives us our HTML. useParks copies the array and getParks applies the data to the array that is copied by useParks
-import {park} from "./Parks.js"
-import {useParks, getParks} from "./ParkProvider.js"
+//importing functions from the other two modules: park and parkCard create how the data will be displayed in HTML. 
+import { park, parkCard } from "./Parks.js";
+import { useParks } from "./ParkProvider.js";
 
-let parkArr = [];
 
-export const makeParkList =() => {
-    getParks().then(() => {
-        parkArr = useParks()
-        console.log(parkArr)
-        // render(parkArr)
-    })
-   .then (() => {
-    const parkObj = document.querySelector(".parkDropdown");
-    //returning array
-        let parkDropHTML = "" 
-        for (const parkObject of parkArr) {
-            parkDropHTML += park(parkObject);
-        }
-      return parkObj.innerHTML += parkDropHTML;
-    })
+//function to render HTML from Parks.js (parkCard) to the DOM, this function also filters the parks by their corresponding parkCode from the API data. 
+export const makeParkCard = (parkData) => {
+    let filterParks = useParks().find( nps => nps.parkCode === parkData)
+    const parkCardObj = document.querySelector(".parkDetail");
+    let parkCardHTML = "";
+   
+    parkCardHTML = parkCard(filterParks);
+    return (parkCardObj.innerHTML = parkCardHTML);
+  };
 
-}
+// makeParkList creates the dropdown and renders it in HTML to the DOM.
+export const makeParkList = (parkData) => {
+  const parkObj = document.querySelector(".parkDropdown");
+  let parkDropHTML = "";
+  for (const parkObject of parkData) {
+    parkDropHTML += park(parkObject);
+  }
+  return (parkObj.innerHTML += parkDropHTML);
+};
