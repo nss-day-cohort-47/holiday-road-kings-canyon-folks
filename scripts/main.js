@@ -6,6 +6,7 @@ import { makeParkCard, makeParkList } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
+import { bizarreObject } from './attractions/AttractionList.js'
 
 
 
@@ -60,7 +61,7 @@ const bizarreEvent = document.querySelector("#bizarreDropdown");
 let currentlySelected = "";
 bizarreEvent.addEventListener("change", (event) => {
     currentlySelected = event.target.value
-    console.log(currentlySelected)
+    console.log(currentlySelected, "currentlySelected")
         displayAttractionCards(event.target.value);
     }
     )

@@ -15,16 +15,21 @@ export const AttractionCard = (bizarre) => {
     return `
     <h2>${bizarre.name}</h2>
     <p>Location: ${bizarre.city}, ${bizarre.state}</p>
-    <p>${bizarre.description}</p>
-    <p>Souvenirs: ${bizarre.ameneties.souvenirs === true ? "Available" : "Unavailable"
-}</p>
-    <p>Restrooms: ${bizarre.ameneties.restrooms === true ? "Available" : "Unavailable"
-}</p>
     `
 }
 
 export const AddBizarreItin = (bizarre) => {
     return `
     <h3>${bizarre.name}</h3>
+    `
+}
+
+export const moreAttractionDetails = (bizarre) => {
+    return `
+    <p>${bizarre.description}</p>
+    <p>Souvenirs: ${bizarre.ameneties.souvenirs === true ? "Available" : "Unavailable"
+}</p>
+    <p>Restrooms: ${bizarre.ameneties.restrooms === true ? "Available" : "Unavailable"
+}</p>
     `
 }
