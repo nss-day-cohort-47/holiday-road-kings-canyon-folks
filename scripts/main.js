@@ -1,8 +1,8 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList, addParkItinerary, foundParks } from "./parks/ParkList.js"
+import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails, eateryObject } from "./eateries/eateryList.js";
+import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails, parkObject } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
@@ -32,7 +32,7 @@ const parkEventButton = document.querySelector(".addParkButton")
 
 const parkPopUp = document.getElementById("parkModal")
 const parkButton = document.getElementById("moreParkDetails")
-const parkSpan = document.getElementById("close")
+const parkSpan = document.getElementById("parkClose")
 
 parkButton.onclick = () => {
     parkPopUp.style.display = "block";
