@@ -1,7 +1,7 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
+import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
@@ -155,3 +155,21 @@ const eateryEventButton = document.querySelector(".eateryButton")
         console.log(event.target, ".eateryButton")
         addEateryItinerary(currentlySelectedEatery)
 })
+
+const eateryPopUp = document.getElementById("eateryModal")
+const eateryButton = document.getElementById("moreEateryDetails")
+const eaterySpan = document.getElementById("eateryClose")
+
+eateryButton.onclick = () =>{
+    eateryPopUp.style.display = "block";
+    displayEateryDetails(currentlySelectedEatery)
+}
+eaterySpan.onclick = () => {
+    eateryPopUp.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == eateryPopUp) {
+        eateryPopUp.style.display = "none";
+    }
+}
