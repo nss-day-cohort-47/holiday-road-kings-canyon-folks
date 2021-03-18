@@ -36,6 +36,7 @@ bizarreEvent.addEventListener("change", (event) => {
     currentlySelected = event.target.value
     console.log(currentlySelected, "currentlySelected")
         displayAttractionCards(event.target.value);
+        bizarreButton.style.display = "block";
     }
     )
     
