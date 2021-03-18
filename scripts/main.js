@@ -78,7 +78,7 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
 
 const bizarrePopUp = document.getElementById("bizarreModal")
 const bizarreButton = document.getElementById("moreBizarreDetails")
-const span = document.getElementsByClassName("close")
+const span = document.getElementById("close")
 
 bizarreButton.onclick = () =>{
     bizarrePopUp.style.display = "block";
