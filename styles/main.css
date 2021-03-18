@@ -187,6 +187,13 @@ body {
     justify-content: flex-end;
 }
 
+#moreBizarreDetails{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: none;
+}
+
 .addBizarreButton{
     background-color: #164A41;
     color: white;
