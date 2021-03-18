@@ -66,9 +66,7 @@ const startWheelsOnTheGround = () => {
 
 }
 
-
 startWheelsOnTheGround();
-
 
 const mainEvent = document.querySelector(".main");
 
