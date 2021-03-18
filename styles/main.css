@@ -127,13 +127,13 @@ body {
     margin-bottom: 5px;
 }
 
-#eateryAside{
+#eateryAsideCard{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
 }
 
-#bizarreAside{
+#bizarreAsideCard{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
@@ -188,6 +188,13 @@ body {
 }
 
 #moreBizarreDetails{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: none;
+}
+
+#moreEateryDetails{
     background-color: #164A41;
     color: white;
     margin: 2px;

@@ -104,6 +104,8 @@ eateryEvent.addEventListener("change", (event) => {
     currentlySelectedEatery = event.target.value
     console.log(currentlySelectedEatery)
          displayEateryCards(event.target.value);
+         eateryButton.style.display = "block";
+
     }
     )
     
