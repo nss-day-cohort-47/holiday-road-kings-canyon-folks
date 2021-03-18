@@ -22,3 +22,9 @@ export const AttractionCard = (bizarre) => {
 }</p>
     `
 }
+
+export const AddBizarreItin = (bizarre) => {
+    return `
+    <h3>${bizarre.name}</h3>
+    `
+}

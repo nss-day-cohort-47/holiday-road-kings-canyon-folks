@@ -1,7 +1,7 @@
 
-import { displayAttractions, displayAttractionCards } from './attractions/AttractionList.js';
+import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
+import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
@@ -51,33 +51,27 @@ parkEvent.addEventListener("change", (event) => {
     makeParkCard(event.target.value)
 })
 
-const mainEvent = document.querySelector(".main");
 
-mainEvent.addEventListener("change", (event) => {
-    console.log(typeof event.target.value)
-    if (event.target.id === "bizarreDropdown") {
+
+
+//! Event Listeners for Bizarre Section
+const bizarreEvent = document.querySelector("#bizarreDropdown");
+
+let currentlySelected = "";
+bizarreEvent.addEventListener("change", (event) => {
+    currentlySelected = event.target.value
+    console.log(currentlySelected)
         displayAttractionCards(event.target.value);
-        // const selection = event.target.value
-        // const singleCard = useBizarre().find(bizarre => {
-        //   return  (bizarre.id === selection)
-        // })
-        // console.log(selection, "selection")
-        // console.log(singleCard, "singleCard")
     }
+    )
     
+const bizarreEventButton = document.querySelector(".addBizarreButton")
+    
+    bizarreEventButton.addEventListener("click", (event) => {
+        console.log(event.target, "test3")
+        addAttractionItinerary(currentlySelected)
 })
 
-
-// singleEatery (event.target.value);
-// const singleEatery = (id){
-//     let foundEatery = useEateries().find(eatery => eatery.id === id);
-//     //use foundBizarre to be the object that is passed into Attraction card HTML representation
-//     //could be a refactored function based off of display attractions 
-//     //
-//     //const target = document.querySelector(the target id or class);
-//     let eateryHTML = SingleEateryCard(foundEatery)
-//     target.innerHTML += eateryHTML
-// };
 
 const eateryElement = document.querySelector(".main");
 
@@ -86,4 +80,22 @@ eateryElement.addEventListener("change", (event) => {
 	if (event.target.id === "eateryDropdown") {
         displayEateryCards(event.target.value);
     }
+})
+
+
+const eateryEvent = document.querySelector("#eateryDropdown");
+
+let currentlySelectedEatery = "";
+eateryEvent.addEventListener("change", (event) => {
+    currentlySelected = event.target.value
+    console.log(currentlySelectedEatery)
+         displayEateryCards(event.target.value);
+    }
+    )
+    
+const eateryEventButton = document.querySelector(".eateryButton")
+    
+        eateryEventButton.addEventListener("click", (event) => {
+        console.log(event.target, ".eateryButton")
+        addEateryItinerary(currentlySelectedEatery)
 })

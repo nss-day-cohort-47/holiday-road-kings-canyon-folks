@@ -1,4 +1,4 @@
-import { eateryDetail, eateryCard } from './eateryDetail.js';
+import { eateryDetail, eateryCard, AddEateryAside } from './eateryDetail.js';
 import { getEateries, useEateries } from './EateryProvider.js';
 
 export const displayEateries = () => {
@@ -23,19 +23,37 @@ export const displayEateries = () => {
 
 export const displayEateryCards = (id) => {
 
-    let eateryCollection = []
+	let eateryCollection = []
 
-    getEateries().then(() => {
-        eateryCollection = useEateries()
-        console.log(eateryCollection, "food test")
-        
-            let foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
-            console.log(foundEateries, "foundEateries")
-            const target = document.querySelector(".eateryDetail")
+	getEateries().then((response) => {
+		eateryCollection = useEateries()
+		console.log(eateryCollection, "food test")
 
-			let eateryHTML = ""
-            eateryHTML = eateryCard(foundEateries)
-            
-            return target.innerHTML = eateryHTML;
-        })
+		let foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
+		console.log(foundEateries, "foundEateries")
+		const target = document.querySelector(".eateryDetail")
+
+		let eateryHTML = ""
+		eateryHTML = eateryCard(foundEateries)
+
+		return target.innerHTML = eateryHTML;
+	})
+}
+
+
+export const addEateryItinerary = (id) => {
+
+	let eateryCollection = []
+
+	getEateries().then(() => {
+		eateryCollection = useEateries()
+		console.log(eateryCollection, "testEateryCollection")
+
+		let foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
+		const target = document.querySelector("#eateryAside")
+
+		let eateryHTML = ""
+		eateryHTML = AddEateryAside(foundEateries)
+		return target.innerHTML = eateryHTML;
+	})
 }
