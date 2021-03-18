@@ -178,6 +178,13 @@ body {
     color: #164A41;
 }
 
+#moreParkDetails{
+    background-color: #164A41;
+    color: white;
+    margin: 2px;
+    display: ;
+}
+
 .addParkButton{
     background-color: #164A41;
     color: white;
