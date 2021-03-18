@@ -1,8 +1,8 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
-import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails, foundParks } from "./parks/ParkList.js"
+import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryDetails } from "./eateries/eateryList.js";
+import { makeParkCard, makeParkList, addParkItinerary, foundParks } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
@@ -92,6 +92,25 @@ window.onclick = (event) => {
     }
 }
 
+const eateryPopUp = document.getElementById("eateryModal")
+const eateryButton = document.getElementById("moreEateryDetails")
+const eaterySpan = document.getElementById("eateryClose")
+
+eateryButton.onclick = () =>{
+    eateryPopUp.style.display = "block";
+    displayEateryDetails(currentlySelectedEatery)
+}
+
+eaterySpan.onclick = () => {
+    eateryPopUp.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == eateryPopUp) {
+        eateryPopUp.style.display = "none";
+    }
+}
+
 const eateryEvent = document.querySelector("#eateryDropdown");
 const eateryElement = document.querySelector(".main");
 
@@ -108,6 +127,8 @@ eateryEvent.addEventListener("change", (event) => {
     currentlySelectedEatery = event.target.value
     console.log(currentlySelectedEatery)
          displayEateryCards(event.target.value);
+         eateryButton.style.display = "block";
+
     }
     )
     

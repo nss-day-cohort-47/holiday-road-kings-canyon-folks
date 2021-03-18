@@ -26,7 +26,8 @@
             <div class="intro">
                 <h3>Welcome to wheels on the ground! Our goal is to make traveling to national parks accessible for
                     everyone. This tool allows you to plan your trip based on handicap-friendly features. All you need
-                    to do is add a park, a place to eat and an attraction to visit to your itinerary, then go on your adventure!
+                    to do is add a park, a place to eat and an attraction to visit to your itinerary, then go on your
+                    adventure!
                 </h3>
             </div>
 
@@ -66,6 +67,15 @@
                 </div>
                 <div class="eateryCard">
                     <div class="eateryDetail"></div>
+                    <button type="button" id="moreEateryDetails">More Details</button>
+                    <div class="eateryDetailsPopUp" id="eateryModal">
+                        <div class="eateryModalContent">
+                            <span id="eateryClose"> &times;</span>
+                            <div class="eateryDetailsTarget">
+
+                            </div>
+                        </div>
+                    </div>
                     <button type="button" class="eateryButton">Add to Itinerary</button>
                 </div>
             </div>
@@ -84,9 +94,9 @@
                     <button type="button" id="moreBizarreDetails">More Details</button>
                     <div class="detailsPopUp" id="bizarreModal">
                         <div class="modal-content">
-                            <span id="close">Close &times;</span>
+                            <span id="close"> &times;</span>
                             <div class="bizarreDetailsTarget">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -115,15 +125,16 @@
                 </div>
 
                 <div>
-                    <h4><u>Your Eatery:</u></h4>
-                    <div id="eateryAside">
+                    <div id="eateryAsideCard">
+                        <h4><u>Your Eatery:</u></h4>
+                        <div id="eateryAside"></div>
                     </div>
                 </div>
 
                 <div>
-                    <h4><u>Your Bizarre Attraction:</u></h4>
-                    <div id="bizarreAside">
-
+                    <div id="bizarreAsideCard">
+                        <h4><u>Your Bizarre Attraction:</u></h4>
+                        <div id="bizarreAside"> </div>
                     </div>
                 </div>
 
