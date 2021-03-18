@@ -1,7 +1,7 @@
 
 import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
-import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
+import { displayEateries, displayEateryCards, addEateryItinerary } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList, addParkItinerary } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
@@ -108,17 +108,7 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
 })
 
 
-// singleEatery (event.target.value);
-// const singleEatery = (id){
-//     let foundEatery = useEateries().find(eatery => eatery.id === id);
-//     //use foundBizarre to be the object that is passed into Attraction card HTML representation
-//     //could be a refactored function based off of display attractions 
-//     //
-//     //const target = document.querySelector(the target id or class);
-//     let eateryHTML = SingleEateryCard(foundEatery)
-//     target.innerHTML += eateryHTML
-// };
-
+const eateryEvent = document.querySelector("#eateryDropdown");
 const eateryElement = document.querySelector(".main");
 
 eateryElement.addEventListener("change", (event) => {
@@ -129,27 +119,17 @@ eateryElement.addEventListener("change", (event) => {
 })
 
 
-// const filterEatery = (whatFilter) => {
-// 	const filterArray = useEateries().filter(singleEatery => {
-// 		if (singleEatery.businessName.includes(whatFilter)) {
-// 			return singleEatery;
-// 		}
-// 	})
-// 	makeEateryList(filterArray);
-// }
-
-// const showdropDownNav = () => {
-// 	const dropDownElement = document.querySelector('.eateryDropdown');
-// 	dropDownElement.innerHTML = dropDownNav();
-// }
-
-
-// const startEIA = () => {
-// 	showdropDownNav();
-// 	loadEateries()
-// 		.then(eateryArray => {
-// 			makeEateryList(eateryArray)
-// 		})
-// }
-
-// startEIA();
+let currentlySelectedEatery = "";
+eateryEvent.addEventListener("change", (event) => {
+    currentlySelectedEatery = event.target.value
+    console.log(currentlySelectedEatery)
+         displayEateryCards(event.target.value);
+    }
+    )
+    
+const eateryEventButton = document.querySelector(".eateryButton")
+    
+        eateryEventButton.addEventListener("click", (event) => {
+        console.log(event.target, ".eateryButton")
+        addEateryItinerary(currentlySelectedEatery)
+})
