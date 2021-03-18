@@ -31,5 +31,6 @@ export const moreAttractionDetails = (bizarre) => {
 }</p>
     <p>Restrooms: ${bizarre.ameneties.restrooms === true ? "Available" : "Unavailable"
 }</p>
+    <h3>Click anywhere outside the box to close!</h3>
     `
 }

@@ -2,7 +2,7 @@
 
 //* First we import our functions from our related modules.
 
-import { Attraction, AttractionCard, AddBizarreItin } from './Attraction.js'
+import { Attraction, AttractionCard, AddBizarreItin, moreAttractionDetails } from './Attraction.js'
 import { getBizarre, useBizarre } from './AttractionProvider.js'
 
 
@@ -78,7 +78,7 @@ export const displayAttractionCards = (id) => {
     
 let foundBizarre = {}
 
-export const addAttractionItinerary = (id) => {
+export const displayMoreDetails = (id) => {
 
     //* Since we want to first get the data and then use the data, we will first set a variable to an empty array
 
@@ -99,14 +99,14 @@ export const addAttractionItinerary = (id) => {
             
             foundBizarre = bizarreCollection.find(bizarre => bizarre.id === parseInt(id))
             console.log(foundBizarre, "foundBizarre")
-            const target = document.querySelector("#bizarreAside")
+            const target = document.querySelector(".bizarreDetailsTarget")
             //* Next we declare an empty variable to build up our dynamic html 
             let bizarreHTML = ""
             //* After that we use a for/of loop to say for every object(bizarreObject) of the array(bizarreCollection) we want to run a function.
             
             
             //* Here we pass an object from the array into the Attraction() function, which is our html blueprint function, and adds each item to the string bizarreHTML.
-            bizarreHTML = AddBizarreItin(foundBizarre)
+            bizarreHTML = moreAttractionDetails(foundBizarre)
             
             //* Finally we want to return our string of html items and place them at the target location on the DOM.
             return target.innerHTML = bizarreHTML;

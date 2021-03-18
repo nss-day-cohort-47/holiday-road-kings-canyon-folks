@@ -1,5 +1,5 @@
 
-import { displayAttractions, displayAttractionCards, addAttractionItinerary } from './attractions/AttractionList.js';
+import { displayAttractions, displayAttractionCards, addAttractionItinerary, displayMoreDetails } from './attractions/AttractionList.js';
 import { getWeatherForecast } from "./weather/WeatherProvider.js";
 import { displayEateries, displayEateryCards } from "./eateries/eateryList.js";
 import { makeParkCard, makeParkList } from "./parks/ParkList.js"
@@ -7,6 +7,7 @@ import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
 import { bizarreObject } from './attractions/AttractionList.js'
+import { moreAttractionDetails } from './attractions/Attraction.js';
 
 
 
@@ -73,6 +74,26 @@ const bizarreEventButton = document.querySelector(".addBizarreButton")
         addAttractionItinerary(currentlySelected)
 })
 
+//! Pop Up Modal
+
+const bizarrePopUp = document.getElementById("bizarreModal")
+const bizarreButton = document.getElementById("moreBizarreDetails")
+const span = document.getElementsByClassName("close")
+
+bizarreButton.onclick = () =>{
+    bizarrePopUp.style.display = "block";
+    displayMoreDetails(currentlySelected)
+}
+
+span.onclick = () => {
+    bizarrePopUp.style.display = "none";
+}
+
+window.onclick = (event) => {
+    if (event.target == bizarrePopUp) {
+        bizarrePopUp.style.display = "none";
+    }
+}
 
 // singleEatery (event.target.value);
 // const singleEatery = (id){
