@@ -15,7 +15,7 @@ export  const getItineraries = () => {
 };
 
 export const createItineraryPost =(itineraryEntry) => {
-    return fetch("http://localhost:8080/itineraries", {
+    return fetch("http://localhost:8088/itineraries", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

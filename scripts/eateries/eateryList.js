@@ -40,6 +40,7 @@ export const displayEateryCards = (id) => {
 	})
 }
 
+let foundEateries = {}
 
 export const addEateryItinerary = (id) => {
 
@@ -49,7 +50,7 @@ export const addEateryItinerary = (id) => {
 		eateryCollection = useEateries()
 		console.log(eateryCollection, "testEateryCollection")
 
-		let foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
+		foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
 		const target = document.querySelector("#eateryAside")
 
 		let eateryHTML = ""
@@ -59,7 +60,6 @@ export const addEateryItinerary = (id) => {
 	})
 }
 
-let foundEateries = {}
 
 export const displayEateryDetails = (id) => {
 
