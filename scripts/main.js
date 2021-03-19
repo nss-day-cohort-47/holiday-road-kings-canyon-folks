@@ -78,7 +78,7 @@ const bizarreButton = document.getElementById("moreBizarreDetails")
 const span = document.getElementById("close")
 
 bizarreButton.onclick = () =>{
-    bizarrePopUp.style.display = "block";
+    eateryPopUp.style.display = "block";
     displayMoreDetails(currentlySelected)
 }
 
