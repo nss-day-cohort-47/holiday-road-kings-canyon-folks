@@ -29,8 +29,25 @@ export const parkItin = (nps) => {
 }
 
 export const moreParkDetails = (nps) => {
+    const phoneNumbArray = nps.contacts.phoneNumbers
+    const emailArray = nps.contacts.emailAddresses
+    let phoneNumb = ""
+    let emailAdd = ""
+        if (phoneNumbArray[0] ) {
+        let phoneObject = phoneNumbArray[0]
+        phoneNumb = phoneObject.phoneNumber
+        }
+        if (emailArray [0]) {
+            let emailObject = emailArray [0]
+            emailAdd = emailObject.emailAddress
+        }
+
     return `
     <p>${nps.description}</p>
+    <h4>Contact Info:</h4>
+   <p>Phone: <a href="tel:${phoneNumb}">${phoneNumb}</a></p>
+   <p>Email: <a href="mailto:${emailAdd}">${emailAdd}</a></p>
     <p><a href="${nps.url}">Visit the ${nps.fullName} official site here</a></p>
     `
 }
+
