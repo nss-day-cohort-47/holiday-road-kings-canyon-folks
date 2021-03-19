@@ -21,7 +21,6 @@ export const displayAttractions = () => {
 
     getBizarre().then(() => {
         bizarreCollection = useBizarre()
-        console.log(bizarreCollection, "test")
 
     })
 
@@ -56,12 +55,11 @@ export const displayAttractionCards = (id) => {
 
     getBizarre().then((response) => {
         bizarreCollection = useBizarre()
-        console.log(bizarreCollection, "test")
+        
          
             
     //* Next we will declare a variable to be equal to one single object from bizarreCollection, which we get with the .find() method. In this statement we want to find an object which matches the id that we pass into the displayAttractionCards() function.    
     let foundBizarre = bizarreCollection.find(bizarre => bizarre.id === parseInt(id))
-            console.log(foundBizarre, "foundBizarre")
             //* here we target the area for the single tile to go
             const target = document.querySelector(".bizarreDetail")
             //* Next we declare an empty variable to build up our dynamic html 
@@ -86,12 +84,10 @@ export const displayMoreDetails = (id) => {
 
     getBizarre().then((response) => {
         bizarreCollection = useBizarre()
-        console.log(bizarreCollection, "test")
         
-      
         //* Next we will declare a variable to be equal to one single object from bizarreCollection, which we get with the .find() method. In this statement we want to find an object which matches the id that we pass into the displayMoreDetails() function. 
         foundBizarre = bizarreCollection.find(bizarre => bizarre.id === parseInt(id))
-        console.log(foundBizarre, "foundBizarre")
+
         //* Here we target the modal that we want the more details to go
         const target = document.querySelector(".eateryDetailsTarget")
         //* Next we declare an empty variable to build up our dynamic html 
@@ -116,11 +112,9 @@ export const addAttractionItinerary = (id) => {
 
     getBizarre().then((response) => {
         bizarreCollection = useBizarre()
-        console.log(bizarreCollection, "test")
 
         //* Next we will declare a variable to be equal to one single object from bizarreCollection, which we get with the .find() method. In this statement we want to find an object which matches the id that we pass into the addAttractionItinerary() function.            
         foundBizarre = bizarreCollection.find(bizarre => bizarre.id === parseInt(id))
-        console.log(foundBizarre, "foundBizarre")
         //* Here we target the section in the side bar that we want to populate with html
         const target = document.querySelector("#bizarreAside")
         //* Next we declare an empty variable to build up our dynamic html 

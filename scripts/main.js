@@ -57,16 +57,14 @@ const bizarreEvent = document.querySelector("#bizarreDropdown");
 let currentlySelected = "";
 bizarreEvent.addEventListener("change", (event) => {
     currentlySelected = event.target.value
-    console.log(currentlySelected, "currentlySelected")
-        displayAttractionCards(event.target.value);
-        bizarreButton.style.display = "block";
+    displayAttractionCards(event.target.value);
+    bizarreButton.style.display = "block";
     }
     )
     
 const bizarreEventButton = document.querySelector(".addBizarreButton")
     
     bizarreEventButton.addEventListener("click", (event) => {
-        console.log(event.target, "test3")
         addAttractionItinerary(currentlySelected)
         saveButton();
 })
@@ -115,7 +113,6 @@ const eateryEvent = document.querySelector("#eateryDropdown");
 const eateryElement = document.querySelector(".main");
 
 eateryElement.addEventListener("change", (event) => {
-    console.log(event.target.value)
 	if (event.target.id === "eateryDropdown") {
         displayEateryCards(event.target.value);
 	}
@@ -125,7 +122,6 @@ eateryElement.addEventListener("change", (event) => {
 let currentlySelectedEatery = "";
 eateryEvent.addEventListener("change", (event) => {
     currentlySelectedEatery = event.target.value
-    console.log(currentlySelectedEatery)
          displayEateryCards(event.target.value);
          eateryButton.style.display = "block";
 
@@ -135,7 +131,6 @@ eateryEvent.addEventListener("change", (event) => {
 const eateryEventButton = document.querySelector(".eateryButton")
     
         eateryEventButton.addEventListener("click", (event) => {
-        console.log(event.target, ".eateryButton")
         addEateryItinerary(currentlySelectedEatery)
         saveButton();
 })
@@ -144,7 +139,6 @@ const eateryEventButton = document.querySelector(".eateryButton")
 //     ****   (itinerary preview filled)   
 //     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
-    console.log(currentlySelected, currentlySelectedEatery, currentlySelectedPark)
     if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
         document.querySelector("#saveButton").disabled=true;
     } else {
@@ -157,11 +151,8 @@ saveItineraryButton.addEventListener("click", event => {
         if(event.target.id === "saveButton") {
                 const nameInput = document.querySelector("input[name='nameBox']");
                 const parkObj = parkObject();
-                console.log(parkObj)
                 const eateryObj = eateryObject();
-                console.log(eateryObj)
                 const bizarreObj = bizarreObject();
-                console.log(bizarreObj)
         
                 const itineraryPostObject = {
                         name: nameInput.value,
