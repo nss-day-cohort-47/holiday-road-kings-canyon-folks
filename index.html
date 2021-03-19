@@ -37,7 +37,7 @@
                     <div class="parkTitle">PICK YOUR PARK</div>
                     <div class="parkSelect">
                         <select class="parkDropdown">
-                            <option value="">Select Park</option>
+                            <option value="" selected disabled hidden>Select Park</option>
                         </select>
                     </div>
                 </div>
@@ -58,7 +58,9 @@
             <!---Pick your Eatery--->
             <div class="eaterySection">
                 <div class="eateryHeader">
-                    <div class="eateryTitle">PICK YOUR EATERY</div>
+                    <div class="eateryTitle">
+                        <img class="icon" src="./images/icon2.png" alt="icon number 2">
+                        PICK YOUR EATERY</div>
                     <div class="eaterySelect">
                         <select id="eateryDropdown">
                             <option id="search" selected disabled hidden>Select Eatery</option>
@@ -85,7 +87,7 @@
                     <div class="bizarreTitle">PICK YOUR BIZARRE ATTRACTION</div>
                     <div class="bizarreSelect">
                         <select id="bizarreDropdown">
-                            <option value="">Select Bizarre Attraction </option>
+                            <option value="" selected disabled hidden>Select Bizarre Attraction </option>
                         </select>
                     </div>
                 </div>
@@ -114,9 +116,9 @@
                 </form>
 
                 <div>
-                    <h4><u>Your Park:</u></h4>
-                    <div id ="parkAside">
-
+                    <div id ="parkAsideCard">
+                        <h4><u>Your Park:</u></h4>
+                        <div id ="parkAside"></div>
                     </div>
                 </div>
 

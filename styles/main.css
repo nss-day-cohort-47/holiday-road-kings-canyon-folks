@@ -121,7 +121,7 @@ body {
      color: rgb(204, 202, 202);
 }
 
-#parkAside{
+#parkAsideCard{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
@@ -162,6 +162,7 @@ body {
 .eateryHeader{
     display: flex;
     justify-content: space-between;
+    padding: 2px;
 }
 
 .eateryCard{
@@ -386,4 +387,14 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .icon{
+      height: 40px;
+      width: 40px;
+  }
+
+  .eateryTitle{
+      display: flex;
+      align-items: center;
   }
