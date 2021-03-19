@@ -140,43 +140,48 @@ const eateryEventButton = document.querySelector(".eateryButton")
         saveButton();
 })
 
-//!!!!   define latitude and longitude to get forecast to render
-let latitude = 36.1659;
-let longitude = -86.7844;
 //   ***  Function that checks if all three conditions are met   
 //     ****   (itinerary preview filled)   
 //     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
     console.log(currentlySelected, currentlySelectedEatery, currentlySelectedPark)
     if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
-    document.querySelector("#saveButton").disabled=true;
+        document.querySelector("#saveButton").disabled=true;
     } else {
         document.querySelector("#saveButton").disabled=false;
     }
 }
+
 //   ***  Function to save itinerary when save button is clicked
 // mainEvent.addEventListener("click", event => {
-//     if(event.target.id === "saveButton") {
-//         const name = document.querySelector("input[name='nameBox']");
-//         const park = 
-//         const eatery = 
-//         const bizarre = bizarreObject();
+    //     if(event.target.id === "saveButton") {
+        //         const nameInput = document.querySelector("input[name='nameBox']");
+        //         const parkObj = parkObject();
+        //         const eateryObj = eateryObject();
+        //         const bizarreObj = bizarreObject();
+        
+        //         const itineraryPostObject = {
+            //             name: nameInput.value,
+            //             park: parkObj ,
+            //             eatery: eateryObj,
+            //             bizarre: bizarreObj,
+            //         };
+            
+            //         createItineraryPost(itineraryPostObject)
+            //         .then(response => {
+                //             console.log("JSON Response: ", response);
+                
+                //         })
+                //     }
+                // })
+//!!!!   define latitude and longitude to get forecast to render
+let latitude = 36.1659;
+let longitude = -86.7844;
+// const latitudeLongitude = () => {
+//     latitude = parkObj().latitude;
+//     longitude = parkObj().longitude;
 
-//         const itineraryPostObject = {
-//             name: ,
-//             park: ,
-//             eatery: ,
-//             bizarre: ,
-//         };
-
-//         createItineraryPost(itineraryPostObject)
-//         .then(response => {
-//             console.log("JSON Response: ", response);
-
-//         })
-//     }
-// })
-
+// }
 
 //   ***  Function to start app processes  ***   //
 

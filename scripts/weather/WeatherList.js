@@ -20,7 +20,7 @@ export const showWeather = (forecast) => {
         }.png">${date
       .toLocaleString("en-US", { weekday: "short" })
       .toUpperCase()}    
-        ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}       
+        ${date.getMonth() + 1}/${date.getDate()}       
         ${forecast.daily[i].temp.max.toFixed(0)}&#8457;-${forecast.daily[
       i
     ].temp.min.toFixed(0)}&#8457;    
@@ -31,3 +31,6 @@ export const showWeather = (forecast) => {
     DomTarget.innerHTML += dailyForecast;
   }
 };
+
+
+// /${date.getFullYear()}
