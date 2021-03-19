@@ -53,6 +53,7 @@ export const displayEateryCards = (id) => {
 //* Once an eatery is selected, we then need a function to transfer the selection to the itinerary aside
 let foundEateries = {}
 
+
 export const addEateryItinerary = (id) => {
 
 	let eateryCollection = []
