@@ -8,7 +8,8 @@ import { showWeather } from "./weather/WeatherList.js";
 import { useBizarre } from './attractions/AttractionProvider.js';
 import { bizarreObject } from './attractions/AttractionList.js'
 import { moreAttractionDetails } from './attractions/Attraction.js';
-import { createItineraryPost } from './itineraries/ItineraryProvider.js';
+import { createItineraryPost, getItineraries } from './itineraries/ItineraryProvider.js';
+import { AddItinery } from './itineraries/itineraryList.js';
 
 //event listener to select a park from the drop down and display a single corresponding park card
 const parkEvent = document.querySelector(".parkDropdown");
@@ -36,7 +37,7 @@ const parkButton = document.getElementById("moreParkDetails")
 const parkSpan = document.getElementById("parkClose")
 
 parkButton.onclick = () => {
-    parkPopUp.style.display = "block";
+    eateryPopUp.style.display = "block";
     displayParkDetails(currentlySelectedPark)
 }
 
@@ -79,7 +80,7 @@ const bizarreButton = document.getElementById("moreBizarreDetails")
 const span = document.getElementById("close")
 
 bizarreButton.onclick = () =>{
-    bizarrePopUp.style.display = "block";
+    eateryPopUp.style.display = "block";
     displayMoreDetails(currentlySelected)
 }
 
@@ -176,8 +177,18 @@ saveItineraryButton.addEventListener("click", event => {
                             console.log("JSON Response: ", response);
                 
                         })
+
+                        .then(()=> {
+                            let ItineryCard = document.querySelector("#savedCard")
+                            ItineryCard.innerHTML += AddItinery(itineraryPostObject) 
+                        }
+                        
+                        )
+
                     }
+                    
                 })
+
 //!!!!   define latitude and longitude to get forecast to render
 let latitude = 36.1659;
 let longitude = -86.7844;

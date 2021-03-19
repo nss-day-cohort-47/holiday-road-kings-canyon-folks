@@ -44,7 +44,7 @@ export const addParkItinerary = (parkData) => {
 
 export const displayParkDetails = (parkData) => {
   filterParks = useParks().find(nps => nps.parkCode === parkData)
-  const target = document.querySelector(".parkDetailsTarget")
+  const target = document.querySelector(".eateryDetailsTarget")
   let parkDetailHTML = "";
   parkDetailHTML = moreParkDetails(filterParks)
   return target.innerHTML = parkDetailHTML;

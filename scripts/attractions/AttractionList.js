@@ -99,7 +99,7 @@ export const displayMoreDetails = (id) => {
             
             foundBizarre = bizarreCollection.find(bizarre => bizarre.id === parseInt(id))
             console.log(foundBizarre, "foundBizarre")
-            const target = document.querySelector(".bizarreDetailsTarget")
+            const target = document.querySelector(".eateryDetailsTarget")
             //* Next we declare an empty variable to build up our dynamic html 
             let bizarreHTML = ""
             //* After that we use a for/of loop to say for every object(bizarreObject) of the array(bizarreCollection) we want to run a function.

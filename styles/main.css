@@ -23,6 +23,9 @@ body {
     color: white;
     height: 120px;
     margin: 40px 0px 40px 0px;
+    padding-left: 20px;
+    font-size: 3.7em;
+    letter-spacing: 4px;
     width: 1500px;
     display: flex;
     align-items: center;
@@ -95,6 +98,9 @@ body {
 #weather{
     font-family: 'Staatliches', sans-serif;
     letter-spacing: 2px;
+}
+
+#weatherAsideCard{
     border: 2px solid black;
     padding: 5px 5px 10px 5px;
     margin-bottom: 5px;
@@ -121,7 +127,7 @@ body {
      color: rgb(204, 202, 202);
 }
 
-#parkAside{
+#parkAsideCard{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
@@ -162,11 +168,12 @@ body {
 .eateryHeader{
     display: flex;
     justify-content: space-between;
+    padding: 2px;
 }
 
 .eateryCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .eateryHeadline{
@@ -230,7 +237,7 @@ body {
 
 .bizarreCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .attractionHeadline{
@@ -255,7 +262,7 @@ body {
 
 .parkCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .parkHeadline{
@@ -386,4 +393,35 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .icon{
+      height: 40px;
+      width: 40px;
+      padding: 2px;
+  }
+
+  .eateryTitle{
+      display: flex;
+      align-items: center;
+  }
+
+  .parkTitle{
+    display: flex;
+    align-items: center;
+  }
+
+  .bizarreTitle{
+    display: flex;
+    align-items: center;
+  }
+
+  .detailInfo{
+    border: solid #4D774E 5px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  #savedCard{
+    padding: 5px;
   }
