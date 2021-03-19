@@ -5,9 +5,7 @@ import { displayEateries, displayEateryCards, addEateryItinerary, displayEateryD
 import { makeParkCard, makeParkList, addParkItinerary, displayParkDetails, parkObject } from "./parks/ParkList.js"
 import { getParks } from "./parks/ParkProvider.js"
 import { showWeather } from "./weather/WeatherList.js";
-import { useBizarre } from './attractions/AttractionProvider.js';
 import { bizarreObject } from './attractions/AttractionList.js'
-import { moreAttractionDetails } from './attractions/Attraction.js';
 import { createItineraryPost } from './itineraries/ItineraryProvider.js';
 
 //event listener to select a park from the drop down and display a single corresponding park card
