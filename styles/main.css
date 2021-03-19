@@ -83,7 +83,7 @@ body {
 .itineraryAside{
     border: solid #164A41 8px;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .savedItinerary{
@@ -121,7 +121,7 @@ body {
      color: rgb(204, 202, 202);
 }
 
-#parkAside{
+#parkAsideCard{
     border: 2px solid black;
     padding: 5px;
     margin-bottom: 5px;
