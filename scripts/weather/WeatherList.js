@@ -3,9 +3,10 @@
 //        ***  and inserting into DOM at #weather
 export const showWeather = (forecast) => {
 
+let fiveDayForcast = ""
 //   ***  DOM Target declared  ***   //
   const DomTarget = document.querySelector("#weather");
-  for (let i = 0; i < forecast.daily.length; i++) {
+  for (let i = 1; i < forecast.daily.length-2; i++) {
     
     //   ***  UNIX timestamp for each day declared for manipulation
     const timestamp = forecast.daily[i].dt;
@@ -20,7 +21,7 @@ export const showWeather = (forecast) => {
         }.png">${date
       .toLocaleString("en-US", { weekday: "short" })
       .toUpperCase()}    
-        ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}       
+        ${date.getMonth() + 1}/${date.getDate()}       
         ${forecast.daily[i].temp.max.toFixed(0)}&#8457;-${forecast.daily[
       i
     ].temp.min.toFixed(0)}&#8457;    
@@ -28,6 +29,11 @@ export const showWeather = (forecast) => {
         </div>
         `;
         //   ***  Append Daily Forecast to DOM at DOM Target  ***   //
-    DomTarget.innerHTML += dailyForecast;
+        
+     fiveDayForcast += dailyForecast;
   }
+  DomTarget.innerHTML = fiveDayForcast
 };
+
+
+// /${date.getFullYear()}

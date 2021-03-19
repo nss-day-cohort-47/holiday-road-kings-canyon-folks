@@ -4,22 +4,19 @@
 import { park, parkCard, parkItin, moreParkDetails } from "./Parks.js";
 import { useParks } from "./ParkProvider.js";
 
-let foundParks = {}
+let filterParks = {}
 
-export const parkObject = () => {
-  return foundParks
-}
 
 
 //function to render HTML from Parks.js (parkCard) to the DOM, this function also filters the parks by their corresponding parkCode from the API data. 
 export const makeParkCard = (parkData) => {
-    let filterParks = useParks().find( nps => nps.parkCode === parkData)
-    const parkCardObj = document.querySelector(".parkDetail");
-    let parkCardHTML = "";
-   
-    parkCardHTML = parkCard(filterParks);
-    return (parkCardObj.innerHTML = parkCardHTML);
-  };
+  filterParks = useParks().find( nps => nps.parkCode === parkData)
+  const parkCardObj = document.querySelector(".parkDetail");
+  let parkCardHTML = "";
+  
+  parkCardHTML = parkCard(filterParks);
+  return (parkCardObj.innerHTML = parkCardHTML);
+};
 
 // makeParkList creates the dropdown and renders it in HTML to the DOM.
 export const makeParkList = (parkData) => {
@@ -35,20 +32,24 @@ export const makeParkList = (parkData) => {
 
 //places the html from Parks.js (parkItin) into the aside.
 export const addParkItinerary = (parkData) => {
-  let filterParks = useParks().find(nps => nps.parkCode === parkData)
+  filterParks = useParks().find(nps => nps.parkCode === parkData)
   const target = document.querySelector("#parkAside")
-
+  
   let parkItinHTML = "";
-
+  
   parkItinHTML = parkItin(filterParks);
   return (target.innerHTML = parkItinHTML)
 };
 
 
 export const displayParkDetails = (parkData) => {
-  let filterParks = useParks().find(nps => nps.parkCode === parkData)
+  filterParks = useParks().find(nps => nps.parkCode === parkData)
   const target = document.querySelector(".parkDetailsTarget")
   let parkDetailHTML = "";
   parkDetailHTML = moreParkDetails(filterParks)
   return target.innerHTML = parkDetailHTML;
+}
+
+export const parkObject = () => {
+  return filterParks
 }
