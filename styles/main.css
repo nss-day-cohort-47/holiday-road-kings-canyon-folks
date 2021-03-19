@@ -166,7 +166,7 @@ body {
 
 .eateryCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .eateryHeadline{
@@ -230,7 +230,7 @@ body {
 
 .bizarreCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .attractionHeadline{
@@ -255,7 +255,8 @@ body {
 
 .parkCard{
     border: solid #164A41 5px;
-    padding: 5px;
+    padding: 10px;
+
 }
 
 .parkHeadline{

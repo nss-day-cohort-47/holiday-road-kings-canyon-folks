@@ -21,6 +21,7 @@ export const makeParkCard = (parkData) => {
     return (parkCardObj.innerHTML = parkCardHTML);
   };
 
+  
 // makeParkList creates the dropdown and renders it in HTML to the DOM.
 export const makeParkList = (parkData) => {
   const parkObj = document.querySelector(".parkDropdown");
