@@ -25,6 +25,7 @@ const parkEventButton = document.querySelector(".addParkButton")
         
         addParkItinerary(currentlySelectedPark)
         saveButton();
+        latitudeLongitude();
     })
 
 //park more details button and pop-up!
@@ -140,43 +141,58 @@ const eateryEventButton = document.querySelector(".eateryButton")
         saveButton();
 })
 
-//!!!!   define latitude and longitude to get forecast to render
-let latitude = 36.1659;
-let longitude = -86.7844;
 //   ***  Function that checks if all three conditions are met   
 //     ****   (itinerary preview filled)   
 //     ****   sets save itinerary button to disabled or enabled
 const saveButton = () => {
     console.log(currentlySelected, currentlySelectedEatery, currentlySelectedPark)
     if(currentlySelectedPark === "" || currentlySelectedEatery === "" || currentlySelected === "") {
-    document.querySelector("#saveButton").disabled=true;
+        document.querySelector("#saveButton").disabled=true;
     } else {
         document.querySelector("#saveButton").disabled=false;
     }
 }
+const saveItineraryButton = document.querySelector("#saveButton")
 //   ***  Function to save itinerary when save button is clicked
-// mainEvent.addEventListener("click", event => {
-//     if(event.target.id === "saveButton") {
-//         const name = document.querySelector("input[name='nameBox']");
-//         const park = 
-//         const eatery = 
-//         const bizarre = bizarreObject();
+saveItineraryButton.addEventListener("click", event => {
+        if(event.target.id === "saveButton") {
+                const nameInput = document.querySelector("input[name='nameBox']");
+                const parkObj = parkObject();
+                console.log(parkObj)
+                const eateryObj = eateryObject();
+                console.log(eateryObj)
+                const bizarreObj = bizarreObject();
+                console.log(bizarreObj)
+        
+                const itineraryPostObject = {
+                        name: nameInput.value,
+                        park: parkObj ,
+                        eatery: eateryObj,
+                        bizarre: bizarreObj,
+                    };
+            
+                    createItineraryPost(itineraryPostObject)
+                    .then(response => {
+                            console.log("JSON Response: ", response);
+                
+                        })
+                    }
+                })
+//!!!!   define latitude and longitude to get forecast to render
+let latitude = 36.1659;
+let longitude = -86.7844;
+const latitudeLongitude = () => {
+    
+    latitude = parkObject().latitude;
+    longitude = parkObject().longitude;
+    getWeatherForecast(latitude, longitude)
+    //   ***  Then parse data (array)  ***   //
+    .then((data) => {
+        //   ***  Call showWeather with parsed data
+      showWeather(data);
+    })
 
-//         const itineraryPostObject = {
-//             name: ,
-//             park: ,
-//             eatery: ,
-//             bizarre: ,
-//         };
-
-//         createItineraryPost(itineraryPostObject)
-//         .then(response => {
-//             console.log("JSON Response: ", response);
-
-//         })
-//     }
-// })
-
+};
 
 //   ***  Function to start app processes  ***   //
 
@@ -192,12 +208,12 @@ const startWheelsOnTheGround = () => {
     //!!!!        Note  arguments will be derived from selected park's coordinates 
     //!!!!              will have to be called after park data with then method
     //   ***  Call getWeatherForecast with coordinates as arguments
-    getWeatherForecast(latitude, longitude)
-    //   ***  Then parse data (array)  ***   //
-    .then((data) => {
+    getWeatherForecast(36.1659, -86.7844)
+      //   ***  Then parse data (array)  ***   //
+      .then((data) => {
         //   ***  Call showWeather with parsed data
-      showWeather(data);
-    });
+        showWeather(data);
+      });
 
 }
 
