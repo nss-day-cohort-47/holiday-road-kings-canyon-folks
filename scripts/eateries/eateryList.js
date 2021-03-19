@@ -51,6 +51,7 @@ export const displayEateryCards = (id) => {
 }
 
 //* Once an eatery is selected, we then need a function to transfer the selection to the itinerary aside
+let foundEateries = {}
 
 export const addEateryItinerary = (id) => {
 
@@ -60,7 +61,7 @@ export const addEateryItinerary = (id) => {
 		eateryCollection = useEateries()
 		console.log(eateryCollection, "testEateryCollection")
 
-		let foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
+		foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
 		const target = document.querySelector("#eateryAside")
 
 		let eateryHTML = ""
@@ -70,7 +71,6 @@ export const addEateryItinerary = (id) => {
 	})
 }
 
-let foundEateries = {}
 
 export const displayEateryDetails = (id) => {
 

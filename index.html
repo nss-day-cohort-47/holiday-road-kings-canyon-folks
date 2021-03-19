@@ -34,7 +34,9 @@
             <!---Pick your Park--->
             <div class="parkSection">
                 <div class="parkHeader">
-                    <div class="parkTitle">PICK YOUR PARK</div>
+                    <div class="parkTitle">
+                        <img class="icon" src="./images/icon 1.png" alt="icon number 1">
+                        PICK YOUR PARK</div>
                     <div class="parkSelect">
                         <select class="parkDropdown">
                             <option value="" selected disabled hidden>Select Park</option>
@@ -42,7 +44,7 @@
                     </div>
                 </div>
                 <div class="parkCard">
-                    <div class="parkDetail"></div>
+                    <div class="parkDetail"></div> 
                     <button type="button" id="moreParkDetails">More Details</button>
                     <div class="parkDetailsPopUp" id="parkModal">
                         <div class="parkModalContent">
@@ -59,8 +61,8 @@
             <div class="eaterySection">
                 <div class="eateryHeader">
                     <div class="eateryTitle">
-                        <img class="icon" src="./images/icon2.png" alt="icon number 2">
-                        PICK YOUR EATERY</div>
+                        <img class="icon" src="./images/icon 2.png" alt="icon number 2">
+                          PICK YOUR EATERY</div>
                     <div class="eaterySelect">
                         <select id="eateryDropdown">
                             <option id="search" selected disabled hidden>Select Eatery</option>
@@ -84,7 +86,9 @@
             <!---Pick your Bizarre--->
             <div class="bizarreSection">
                 <div class="bizarreHeader">
-                    <div class="bizarreTitle">PICK YOUR BIZARRE ATTRACTION</div>
+                    <div class="bizarreTitle"> 
+                        <img class="icon" src="./images/icon 3.png" alt="icon number 3">
+                        PICK YOUR BIZARRE ATTRACTION</div>
                     <div class="bizarreSelect">
                         <select id="bizarreDropdown">
                             <option value="" selected disabled hidden>Select Bizarre Attraction </option>
@@ -104,6 +108,17 @@
                     </div>
                     <button type="button" class="addBizarreButton">Add to Itinerary</button>
                 </div>
+                <div class="detailInfo">
+                    <h2> More info on Accessibility in Parks</h2>
+                    <h3>Access Pass</h3>
+                    <p>The Access Pass is a FREE, lifetime pass available to United States citizens or permanent residents, regardless of age, that have a permanent disability. The pass may be obtained two ways: (1) at a federal recreation site where entrance or standard amenity fees are charged; or (2) through the mail. You just need to provide the following information:
+                        <li> A statement signed by a licensed physician attesting that you have a permanent physical, mental, or sensory impairment that substantially limits one or more major life activities, and stating the nature of the impairment; or</li>
+                        <li>A document issued by a federal agency, such as the U.S. Department of Veterans Administration, which attests that you have been medically determined to be eligible to receive federal benefits as a result of blindness or permanent disability. Other acceptable federal agency documents include proof of receipt of Social Security Disability Income (SSDI) or Supplemental Security Income (SSI); or</li>
+                        <li>A document issued by a state agency, such as a vocational rehabilitation agency, which attests that you have been medically determined to be eligible to receive vocational rehabilitation agency benefits or services as a result of medically determined blindness or permanent disability. Showing a state motor vehicle department disability sticker, license plate or hang tag is not acceptable documentation.</li>
+                    </p>
+                    <h3>Service dogs</h3>
+                    <p>Service dogs are legally permitted anywhere that visitors can go. However, NPS notes that only dogs are classified as service animals, and that emotional support or comfort animals are not considered service animals by NPS.</p>
+                </div>
             </div>
         </div>
         <!---Aside--->
@@ -116,14 +131,17 @@
                 </form>
 
                 <div>
-                    <div id ="parkAsideCard">
+                    <div id="parkAsideCard">
                         <h4><u>Your Park:</u></h4>
                         <div id ="parkAside"></div>
                     </div>
                 </div>
 
-                <div id="weather">
+                <div id="weatherAsideCard">
                     <h4><u>Upcoming Weather Report:</u></h4>
+                    <div id="weather"> 
+                        
+                    </div>
                 </div>
 
                 <div>
@@ -145,7 +163,7 @@
 
             <div class="savedItinerary">
                 <h2 class="itineraryHeader">SAVED ITINERARIES</h2>
-
+                <div id="savedCard"></div>
             </div>
 
         </div>
