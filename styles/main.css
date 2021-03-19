@@ -281,7 +281,8 @@ a:hover {
 }
 
 .parkHeadline{
-    color: #164A41
+    color: #164A41;
+    font-weight: bold;
 }
 
 .parkTitle{
