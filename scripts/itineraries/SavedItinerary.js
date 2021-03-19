@@ -1,11 +1,14 @@
-//inside bizarre event handler on main://
-singleAttraction(event.target.value);
-const singelAttraction = (id) {
-let foundBizarre = useBizarres().find(bizarre => bizarre.id === id);
-//use foundBizarre to be the object that is passed into Attraction card HTML representation
-//could be a refactored function based off of display attractions 
+import { useItineraryCollection, getItineraries, createItineraryPost} from "./ItineraryProvider";
+
+//inside itinerary event handler on main://
+singleItinerary(event.target.value);
+const singleItinerary = (id) {
+let getItineraries = useItineraryCollection().find(itineraryEntry => itineraryEntry.id === id);
+//use getItineraries to be the object that is passed into Itinerary card HTML representation
+//could be a refactored function based off of display Itinerary 
 //
 const target = document.querySelector();
-let savedIteneraryHTML = SingleAttractionCard(foundBizarre)
+let savedItineraryHTML = singleItineraryCard(createItineraryPost)
+console.log(createItineraryPost)
 target.innerHTML += savedItineraryHTML
 }
