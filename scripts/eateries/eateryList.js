@@ -12,7 +12,7 @@ export const displayEateries = () => {
 
 	getEateries().then(() => {
 		eateryCollection = useEateries()
-		console.log(eateryCollection, "Let's eat")
+
 
 	})
 		.then(() => {
@@ -60,14 +60,12 @@ export const addEateryItinerary = (id) => {
 
 	getEateries().then((response) => {
 		eateryCollection = useEateries()
-		console.log(eateryCollection, "testEateryCollection")
 
 		foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
 		const target = document.querySelector("#eateryAside")
 
 		let eateryHTML = ""
 		eateryHTML = AddEateryAside(foundEateries)
-		console.log(foundEateries, "foundEateries")
 		return target.innerHTML = eateryHTML;
 	})
 }
@@ -79,10 +77,8 @@ export const displayEateryDetails = (id) => {
 	
     getEateries().then((response) => {
         eateryCollection = useEateries()
-        console.log(eateryCollection, "test")
         
             foundEateries = eateryCollection.find(eateryObj => eateryObj.id === parseInt(id))
-            console.log(foundEateries, "foundEateries")
             const target = document.querySelector(".eateryDetailsTarget")
             let eateryHTML = ""
          	eateryHTML = eateryMoreDetail(foundEateries)

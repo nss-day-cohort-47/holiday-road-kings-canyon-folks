@@ -18,12 +18,15 @@ export const AttractionCard = (bizarre) => {
     `
 }
 
+//! This is the function to add the selected attraction to the itinerary.
+
 export const AddBizarreItin = (bizarre) => {
     return `
     <h3>${bizarre.name}</h3>
     `
 }
 
+//! This function will populate a modal when the more details button is clicked.
 export const moreAttractionDetails = (bizarre) => {
     return `
     <p>${bizarre.description}</p>

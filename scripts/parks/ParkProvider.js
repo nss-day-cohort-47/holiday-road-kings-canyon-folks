@@ -11,7 +11,6 @@ export const getParks = () => {
     .then(response => response.json())
     .then((parsedResponse) => {
        parkCollection = parsedResponse.data
-       console.log(parsedResponse)
         return parsedResponse.data;
     });
 };
