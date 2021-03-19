@@ -13,6 +13,21 @@ body {
     font-family: 'Lato', sans-serif, cursive;
 }
 
+a {
+    text-decoration: none;
+    color: #164A41;
+}
+
+a:visited {
+    color: rgb(102, 100, 100);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(102, 100, 100);
+}
+
+
 .logo{
     width: 200px;
     height: 200px;
@@ -266,7 +281,8 @@ body {
 }
 
 .parkHeadline{
-    color: #164A41
+    color: #164A41;
+    font-weight: bold;
 }
 
 .parkTitle{

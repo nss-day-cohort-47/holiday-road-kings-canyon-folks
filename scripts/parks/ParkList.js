@@ -41,7 +41,7 @@ export const addParkItinerary = (parkData) => {
   return (target.innerHTML = parkItinHTML)
 };
 
-
+//Places the html from parks.js into the modal box that pops up for more details.
 export const displayParkDetails = (parkData) => {
   filterParks = useParks().find(nps => nps.parkCode === parkData)
   const target = document.querySelector(".eateryDetailsTarget")

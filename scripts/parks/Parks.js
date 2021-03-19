@@ -16,21 +16,40 @@ export const parkCard = (nps) => {
         imageAltText = imageObject.altText
     }
     return `
-    <h2>${nps.fullName}</h2>
+    <h2 class="parkHeadline">${nps.fullName}</h2>
     <div><img class="parkImg" src="${imageUrl}" alt="${imageAltText}"></div>
     <p>Location: ${nps.states}</p>
     `
 }
 
+//creating HTML component for placing the park into the itinerary preview
 export const parkItin = (nps) => {
     return `
     <h3>${nps.fullName}</h3>
     `
 }
 
+//creating the HTML component for the park more details in the module box. had to specify multiple arrays to populate the contact information. 
 export const moreParkDetails = (nps) => {
+    const phoneNumbArray = nps.contacts.phoneNumbers
+    const emailArray = nps.contacts.emailAddresses
+    let phoneNumb = ""
+    let emailAdd = ""
+        if (phoneNumbArray[0] ) {
+        let phoneObject = phoneNumbArray[0]
+        phoneNumb = phoneObject.phoneNumber
+        }
+        if (emailArray [0]) {
+            let emailObject = emailArray [0]
+            emailAdd = emailObject.emailAddress
+        }
+
     return `
     <p>${nps.description}</p>
+    <h4>Contact Info:</h4>
+   <p>Phone: <a href="tel:${phoneNumb}">${phoneNumb}</a></p>
+   <p>Email: <a href="mailto:${emailAdd}">${emailAdd}</a></p>
     <p><a href="${nps.url}">Visit the ${nps.fullName} official site here</a></p>
     `
 }
+
