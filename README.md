@@ -9,7 +9,7 @@ The goal for this project was to build an application that will allow people to 
 
 ## Noteworthy Successes
 
-In this project we had to pull from 4 different APIs and combine the data into a saved itinerary object which we then saved to a database.
+In this project we had to pull from 4 different APIs and combine the data into a saved itinerary object which we then saved to a database. It was also our first introduction to a sprint which is part of the Scrum framework for agile development. It was a great way to understand what each team member was working on everyday and enabled easy communication while working remotely.
 
 ## Our Persona
 
